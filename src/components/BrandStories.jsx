@@ -1,51 +1,60 @@
 import React from 'react';
-import milestoneImg from '../assets/milestone_banner.png';
+import foundersImg from '../assets/founders_collection.png';
 import wellnessImg from '../assets/wellness_collection.png';
 
-export default function BrandStories() {
+export default function BrandStories({ onNavigate }) {
   return (
-    <div id="story">
-      
-      {/* 13. BRAND STORY BLOCK — Craftsmanship */}
-      <section className="feature-block">
-        <div className="feature-image-side">
-          <img src={milestoneImg} alt="Small-Batch Candle Craftsmanship" />
-        </div>
-        <div className="feature-content">
-          <span className="feature-eyebrow">Our Standard</span>
-          <h2 className="feature-heading">Small-Batch Craftsmanship, Not Mass Produced.</h2>
-          <p className="brand-story-intro">
-            Every candle is mixed, poured, labeled, and polished by hand in our California studio.
-          </p>
-          <p className="feature-text">
-            By avoiding large industrial machinery, we maintain strict quality control over pouring temperatures, scent concentrations, and wick settings. This dedication is felt in the steady flame, even burn, and pristine aroma profiles of each Annette Pure piece.
-          </p>
-          <p className="brand-story-tagline">
-            "A difference you can hear in the crackle, and feel in the atmosphere."
-          </p>
-          <a href="#bestsellers" className="btn-luxe">
-            Shop all candles
-          </a>
-        </div>
-      </section>
+    <section className="section brand-stories-section" id="story">
+      <div className="section-intro">
+        <span className="section-eyebrow">The Annette Pure Standard</span>
+        <h2 className="section-title">Our Craft & Philosophy</h2>
+      </div>
 
-      {/* 14. BRAND STORY BLOCK — Philosophy */}
-      <section className="feature-block alt" style={{ borderBottom: '1px solid rgba(226, 221, 213, 0.4)' }}>
-        <div className="feature-image-side">
-          <img src={wellnessImg} alt="Annette Pure Philosophy" />
+      <div className="stories-grid">
+        
+        {/* 13. Craftsmanship */}
+        <div className="story-card">
+          <div className="story-img-wrap">
+            <img src={foundersImg} alt="Small-Batch Artisan Craftsmanship" className="story-img" />
+            <span className="story-badge">Artisan Poured</span>
+          </div>
+          <div className="story-content">
+            <span className="story-eyebrow">Small-Batch Dedication</span>
+            <h3 className="story-title">Crafted with Intention, Not Mass Produced.</h3>
+            <p className="story-body">
+              Every single Annette Pure candle is hand-poured in micro-batches of twelve. We meticulously monitor pour temperatures, hand-set each braided cotton wick, and allow every candle to cure naturally for two weeks before packaging.
+            </p>
+            <button 
+              className="btn-luxe" 
+              onClick={() => onNavigate && onNavigate('story')}
+            >
+              Read Our Story &rarr;
+            </button>
+          </div>
         </div>
-        <div className="feature-content">
-          <span className="feature-eyebrow">Philosophy</span>
-          <h2 className="feature-heading">The art of intention</h2>
-          <p className="feature-text">
-            We believe lighting a candle is an act of mindfulness. It marks a return to the self, a quiet boundary drawn against a busy day. Our scents are intentionally designed to anchor you in the current moment, turning simple spaces into peaceful sanctuaries.
-          </p>
-          <button className="btn-luxe btn-solid" onClick={() => alert("Our full philosophy book is coming soon!")}>
-            Learn about our philosophy
-          </button>
-        </div>
-      </section>
 
-    </div>
+        {/* 14. Philosophy */}
+        <div className="story-card">
+          <div className="story-img-wrap">
+            <img src={wellnessImg} alt="The Art of Mindful Ambiance" className="story-img" />
+            <span className="story-badge">Botanical Science</span>
+          </div>
+          <div className="story-content">
+            <span className="story-eyebrow">The Art of Intention</span>
+            <h3 className="story-title">Purity You Can Breathe In Peace.</h3>
+            <p className="story-body">
+              We reject cheap paraffin fillers, synthetic dyes, and harsh chemical stabilizers. Our clean promise guarantees 100% biodegradable American soy wax, lead-free cotton wicks, and pure essential oil fragrance blends.
+            </p>
+            <button 
+              className="btn-luxe"
+              onClick={() => onNavigate && onNavigate('shop', { category: 'Wellness' })}
+            >
+              Shop Clean Scents &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
   );
 }

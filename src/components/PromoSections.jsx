@@ -3,57 +3,89 @@ import fallWinterImg from '../assets/fall_winter_collection.png';
 import boutiqueImg from '../assets/boutique_collection.png';
 import wellnessImg from '../assets/wellness_collection.png';
 
-export default function PromoSections() {
+export default function PromoSections({ onNavigate }) {
   return (
-    <div id="promo-sections">
+    <section className="section promo-sections">
       
-      {/* 5.3. PROMO BANNER — Seasonal (Fall/Winter) */}
-      <section className="promo-banner-section" id="seasonal">
-        <div className="promo-banner-grid">
-          <div className="promo-banner-image">
-            <img src={fallWinterImg} alt="Fall / Winter Seasonal Candles" />
-          </div>
-          <div className="promo-banner-content">
-            <h2 className="promo-banner-title">Fall / Winter Candles & Scents</h2>
-            <p className="promo-banner-desc">
-              As the nights grow longer, welcome the rich comfort of cinnamon bark, roasted pumpkin seed, crackling birchwood, and spiced cedar. Our seasonal winter vault has officially opened.
-            </p>
-            <a href="#bestsellers" className="btn-luxe promo-banner-btn">
-              Shop Fall / Winter Candles
-            </a>
-          </div>
+      {/* 5.3 Promo Seasonal Full Banner */}
+      <div 
+        className="seasonal-banner" 
+        style={{ backgroundImage: `url(${fallWinterImg})` }}
+      >
+        <div className="seasonal-overlay" />
+        <div className="seasonal-content">
+          <span className="seasonal-eyebrow">Autumn & Winter Vault</span>
+          <h2 className="seasonal-title">Fireside Moments & Spiced Amber</h2>
+          <p className="seasonal-desc">
+            Wrap your home in rich warmth. Featuring rare Madagascar vanilla, Ceylon cinnamon bark, smoky cedarwood, and roasted Honeycrisp apples.
+          </p>
+          <button 
+            className="btn-luxury-cta"
+            onClick={() => onNavigate && onNavigate('shop', { category: 'Heirloom Artisan' })}
+          >
+            Shop Fall / Winter Candles &rarr;
+          </button>
         </div>
-      </section>
+      </div>
 
-      {/* 5.4 & 5.5. PROMO TILES (Boutique & Wellness) */}
-      <section className="section promo-tiles-section" id="tiles">
+      {/* 5.4 & 5.5 Two Grid Promo Tiles */}
+      <div className="promo-tiles-grid" id="tiles">
         
-        {/* Boutique Promo Tile */}
-        <div className="promo-tile" id="boutique">
-          <img src={boutiqueImg} alt="Annette Boutique" className="promo-tile-img" />
-          <h3 className="promo-tile-title">The Annette Boutique</h3>
-          <p className="promo-tile-text">
-            Explore curated vessels, artisanal wick trimmers, snuffs, match jars, and specialty candles made exclusively for our local boutique.
-          </p>
-          <a href="#all" className="btn-luxe">
-            Shop The Boutique
-          </a>
+        {/* Tile 1: Boutique */}
+        <div className="promo-tile" onClick={() => onNavigate && onNavigate('boutique')}>
+          <img src={boutiqueImg} alt="The Laguna Beach Boutique" className="promo-tile-bg" />
+          <div className="promo-tile-overlay" />
+          <div className="promo-tile-content">
+            <span className="promo-tile-tag">Flagship Experience</span>
+            <h3 className="promo-tile-title">The Laguna Boutique</h3>
+            <p className="promo-tile-text">
+              Visit our sunlit coastal studio. Experience custom scent pairing consultations and our sustainable vessel refill bar.
+            </p>
+            <button 
+              className="btn-luxury-outline promo-tile-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onNavigate) onNavigate('boutique');
+              }}
+            >
+              Plan Your Visit &rarr;
+            </button>
+          </div>
         </div>
 
-        {/* Wellness/Self-Care Promo Tile */}
-        <div className="promo-tile" id="wellness">
-          <img src={wellnessImg} alt="Wellness Rituals" className="promo-tile-img" />
-          <h3 className="promo-tile-title">Embrace Change, Embrace Calm</h3>
-          <p className="promo-tile-text">
-            Formulated to restore focus and soothe daily tension. Infused with pure organic lavender and wild lemongrass essential oils.
-          </p>
-          <a href="#all" className="btn-luxe">
-            More About Wellness Rituals
-          </a>
+        {/* Tile 2: Wellness */}
+        <div className="promo-tile" onClick={() => onNavigate && onNavigate('shop', { category: 'Wellness' })}>
+          <img src={wellnessImg} alt="Wellness Rituals and Aromatherapy" className="promo-tile-bg" />
+          <div className="promo-tile-overlay" />
+          <div className="promo-tile-content">
+            <span className="promo-tile-tag">Mindful Living</span>
+            <h3 className="promo-tile-title">Embrace Calm, Embrace Ritual</h3>
+            <p className="promo-tile-text">
+              Transform your evening routine. Formulated with soothing French lavender, chamomile, and non-toxic botanical essences.
+            </p>
+            <button 
+              className="btn-luxury-outline promo-tile-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onNavigate) onNavigate('shop', { category: 'Wellness' });
+              }}
+            >
+              Explore Wellness Scents &rarr;
+            </button>
+          </div>
         </div>
 
-      </section>
+      </div>
 
-    </div>
+      {/* 11. Section Divider Tagline */}
+      <div className="clean-burn-divider">
+        <span className="divider-icon">&#10022;</span>
+        <blockquote className="divider-quote">
+          "Clean burn, full aroma, and a long-lasting sensory experience that honors the sacred space of your home."
+        </blockquote>
+        <span className="divider-author">&mdash; Annette Makutam, Master Chandler</span>
+      </div>
+
+    </section>
   );
 }

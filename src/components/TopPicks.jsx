@@ -1,124 +1,117 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
+import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 import wellnessImg from '../assets/wellness_collection.png';
 import foundersImg from '../assets/founders_collection.png';
 import boutiqueImg from '../assets/boutique_collection.png';
 import fallWinterImg from '../assets/fall_winter_collection.png';
 
-export default function TopPicks() {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function TopPicks({ onNavigate, onQuickView, onAddToCart }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const picks = [
+  const seasonalScents = [
     {
-      name: "Pineapple Coconut",
-      desc: "A tropical oasis blend of caramelized pineapple, fresh shaved coconut, and warm Madagascar vanilla.",
+      id: 101,
+      title: "Pineapple Coconut & Amber",
+      category: "Seasonal Limited",
+      description: "Sun-drenched golden pineapple, creamy coconut water, and a warm base of amber resin. Captures lingering coastal summer afternoons.",
       image: boutiqueImg,
       hoverImage: wellnessImg,
-      link: "#pineapple"
+      price: 38.00,
+      season: "Late Summer / Early Fall"
     },
     {
-      name: "Fresh Cut Herbs",
-      desc: "An earthy, therapeutic fusion of crushed sweet basil, wild sage leaves, and green rosemary sprigs.",
+      id: 102,
+      title: "Fresh Cut Herbs & Lavender",
+      category: "Aromatherapy Reserve",
+      description: "Crisp rosemary sprigs, crushed garden thyme, and blooming French lavender. Hand-poured to purify your home ambiance.",
       image: wellnessImg,
       hoverImage: foundersImg,
-      link: "#herbs"
+      price: 36.00,
+      season: "All-Year Wellness"
     },
     {
-      name: "Blueberry Cobbler",
-      desc: "Rich, decadent aroma of wild blueberries, warm butter crust, brown sugar, and sweet vanilla glaze.",
+      id: 103,
+      title: "Blueberry Cobbler & Vanilla",
+      category: "Gourmand Heritage",
+      description: "Simmering wild mountain blueberries, baked biscuit crust, and rich Madagascar bourbon vanilla bean.",
       image: fallWinterImg,
       hoverImage: boutiqueImg,
-      link: "#cobbler"
+      price: 40.00,
+      season: "Fall / Winter Reserve"
     },
     {
-      name: "Sun-Kissed Citrus",
-      desc: "A bright, energetic splash of blood orange, sparkling mandarin, and fresh squeezed lime peel.",
+      id: 104,
+      title: "Sun-Kissed Citrus & Sea Pine",
+      category: "Coastal Botanicals",
+      description: "Zesty California blood orange, salty ocean spray, and sun-warmed coastal pine needles. Bright, energetic, and clean.",
       image: foundersImg,
       hoverImage: fallWinterImg,
-      link: "#citrus"
+      price: 38.00,
+      season: "Spring & Summer"
     }
   ];
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % picks.length);
+    setCurrentIndex((prev) => (prev + 1) % seasonalScents.length);
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + picks.length) % picks.length);
+    setCurrentIndex((prev) => (prev - 1 + seasonalScents.length) % seasonalScents.length);
   };
 
+  const current = seasonalScents[currentIndex];
+
   return (
-    <section className="section" style={{ backgroundColor: 'var(--bg-secondary)', borderBottom: '1px solid var(--border-color)' }}>
-      <div className="carousel-header">
-        <h2 className="section-title">Top Picks For The Season</h2>
-        <div className="carousel-controls">
-          <button className="carousel-nav-btn" onClick={handlePrev} aria-label="Previous season pick">
-            <ChevronLeft size={20} />
-          </button>
-          <span style={{ fontSize: '0.8rem', letterSpacing: '0.1em', fontFamily: 'var(--font-heading)', color: 'var(--text-muted)' }}>
-            ({activeIndex + 1} / {picks.length})
-          </span>
-          <button className="carousel-nav-btn" onClick={handleNext} aria-label="Next season pick">
-            <ChevronRight size={20} />
-          </button>
+    <section className="section top-picks-section">
+      <div className="top-picks-header">
+        <div>
+          <span className="section-eyebrow">Seasonal Olfactory Edit</span>
+          <h2 className="section-title text-left">Top Picks for the Season</h2>
+        </div>
+        <div className="top-picks-indicator-group">
+          <span className="carousel-counter">0{currentIndex + 1} / 0{seasonalScents.length}</span>
+          <div className="carousel-controls">
+            <button className="carousel-nav-btn" onClick={handlePrev} aria-label="Previous scent pick">
+              <ChevronLeft size={20} />
+            </button>
+            <button className="carousel-nav-btn" onClick={handleNext} aria-label="Next scent pick">
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div style={{ marginTop: '30px' }}>
-        {/* We will display the active scent card in a beautiful large showcase card with layout shifting or slide transition */}
-        <div className="scent-display" style={{
-          display: 'grid',
-          gridTemplateColumns: '1.2fr 1fr',
-          gap: '50px',
-          alignItems: 'center',
-          backgroundColor: 'var(--bg-primary)',
-          border: '1px solid var(--border-color)',
-          padding: '40px',
-          transition: 'all 0.5s ease'
-        }}>
-          {/* Image Side */}
-          <div style={{ position: 'relative', height: '400px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-            <img 
-              src={picks[activeIndex].image} 
-              alt={picks[activeIndex].name} 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-            />
+      <div className="top-picks-card">
+        <div className="top-picks-img-col">
+          <div className="top-picks-img-wrapper">
+            <img src={current.image} alt={current.title} className="top-picks-main-img" />
+            <span className="top-picks-season-tag">{current.season}</span>
+          </div>
+        </div>
+
+        <div className="top-picks-info-col">
+          <span className="top-picks-category">{current.category}</span>
+          <h3 className="top-picks-title">{current.title}</h3>
+          <p className="top-picks-desc">{current.description}</p>
+          
+          <div className="top-picks-details">
+            <span className="top-picks-price">${current.price.toFixed(2)}</span>
+            <span className="top-picks-spec">100% Pure Soy &bull; 65 Hr Burn</span>
           </div>
 
-          {/* Info Side */}
-          <div style={{ padding: '20px 0' }}>
-            <span style={{ 
-              fontFamily: 'var(--font-heading)', 
-              fontSize: '0.75rem', 
-              letterSpacing: '0.2em', 
-              color: 'var(--accent-gold-dark)', 
-              textTransform: 'uppercase',
-              display: 'block',
-              marginBottom: '15px'
-            }}>
-              Seasonal Exclusive Scent
-            </span>
-            <h3 style={{ 
-              fontSize: '2rem', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.08em', 
-              marginBottom: '20px',
-              fontFamily: 'var(--font-heading)'
-            }}>
-              {picks[activeIndex].name}
-            </h3>
-            <p style={{ 
-              fontSize: '0.85rem', 
-              color: 'var(--text-muted)', 
-              lineHeight: '1.8', 
-              marginBottom: '35px'
-            }}>
-              {picks[activeIndex].desc}
-            </p>
-            <a href={picks[activeIndex].link} className="btn-luxe btn-solid">
-              Explore Scent
-            </a>
+          <div className="top-picks-cta-row">
+            <button 
+              className="btn-luxury-cta"
+              onClick={() => onNavigate && onNavigate('shop')}
+            >
+              Shop This Season &rarr;
+            </button>
+            <button 
+              className="btn-luxury-outline"
+              onClick={() => onNavigate && onNavigate('samples')}
+            >
+              Order Scent Sampler
+            </button>
           </div>
         </div>
       </div>

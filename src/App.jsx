@@ -1,32 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// Import global layouts and sections
+// Global Layout Components
 import AnnouncementBar from './components/AnnouncementBar';
 import Header from './components/Header';
-import heroLuxuryImg from './assets/hero_luxury.png';
-import CategoryGrid from './components/CategoryGrid';
-import USPStrip from './components/USPStrip';
-import Bestsellers from './components/Bestsellers';
-import TopPicks from './components/TopPicks';
-import FeatureBlocks from './components/FeatureBlocks';
-import PromoSections from './components/PromoSections';
-import BrandStories from './components/BrandStories';
-import Testimonials from './components/Testimonials';
-import BrandVideo from './components/BrandVideo';
-import MilestoneBanner from './components/MilestoneBanner';
-import SupportStrip from './components/SupportStrip';
 import Footer from './components/Footer';
-
-// Import overlays
 import { CartDrawer, SearchDrawer, QuickViewModal } from './components/Drawers';
 
+// Page Views
+import HomePage from './pages/HomePage';
+import ShopPage from './pages/ShopPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import PrivateLabelPage from './pages/PrivateLabelPage';
+import SamplesPage from './pages/SamplesPage';
+import BoutiquePage from './pages/BoutiquePage';
+import OurStoryPage from './pages/OurStoryPage';
+import MediaPage from './pages/MediaPage';
+import EventsPage from './pages/EventsPage';
+import CheckoutPage from './pages/CheckoutPage';
+import AccountPage from './pages/AccountPage';
+import ContactFaqPage from './pages/ContactFaqPage';
+import PoliciesPage from './pages/PoliciesPage';
+
+// Default Product Data
+import { PRODUCTS } from './data/products';
+
 function App() {
-  // Cart, Search and Quick View States
-  const [cartItems, setCartItems] = useState([]);
+  // Navigation & Routing State
+  const [currentPage, setCurrentPage] = useState('home');
+  const [navParams, setNavParams] = useState({});
+
+  // Cart State (Persisted)
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('annette_pure_cart');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.warn('LocalStorage error:', e);
+    }
+    // Default initial sample item for demonstration
+    return [
+      {
+        id: 1,
+        title: "Forest Ave.",
+        price: 38.00,
+        image: PRODUCTS[0].image,
+        quantity: 1
+      }
+    ];
+  });
+
+  // Wishlist State (Persisted)
+  const [wishlist, setWishlist] = useState(() => {
+    try {
+      const saved = localStorage.getItem('annette_pure_wishlist');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.warn('LocalStorage error:', e);
+    }
+    return [1, 3];
+  });
+
+  // Placed Orders State (Persisted)
+  const [orders, setOrders] = useState(() => {
+    try {
+      const saved = localStorage.getItem('annette_pure_orders');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      console.warn('LocalStorage error:', e);
+    }
+    return [];
+  });
+
+  // Drawers & Modals State
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+
+  // Sync to LocalStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('annette_pure_cart', JSON.stringify(cartItems));
+    } catch (e) {}
+  }, [cartItems]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('annette_pure_wishlist', JSON.stringify(wishlist));
+    } catch (e) {}
+  }, [wishlist]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('annette_pure_orders', JSON.stringify(orders));
+    } catch (e) {}
+  }, [orders]);
+
+  // Main Page Navigation Handler
+  const handleNavigate = (page, params = {}) => {
+    setCurrentPage(page);
+    setNavParams(params);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Cart Operations
   const handleAddToCart = (product, quantity = 1) => {
@@ -37,9 +112,17 @@ function App() {
           item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
-      return [...prevItems, { id: product.id, title: product.title, price: product.price, image: product.image, quantity }];
+      return [
+        ...prevItems,
+        {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          quantity
+        }
+      ];
     });
-    // Automatically open the cart drawer to provide direct feedback to the user
     setIsCartOpen(true);
   };
 
@@ -57,114 +140,186 @@ function App() {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
+  // Wishlist Toggle
+  const handleToggleWishlist = (productId) => {
+    setWishlist((prev) => 
+      prev.includes(productId) 
+        ? prev.filter((id) => id !== productId) 
+        : [...prev, productId]
+    );
+  };
+
+  // Orders Management
+  const handleAddOrder = (newOrder) => {
+    setOrders((prev) => [newOrder, ...prev]);
+  };
+
   // Quick View Trigger
   const handleQuickView = (product) => {
     setQuickViewProduct(product);
     setIsQuickViewOpen(true);
   };
 
-  // Search Submit Trigger
-  const handleSearchSubmit = (query) => {
-    alert(`Searching for "${query}" in ANNETTE PURE collection... (This is a frontend demonstration)`);
-    setIsSearchOpen(false);
-  };
-
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="app-container">
-      {/* 1. Scrolling announcement bar at the top */}
+      
+      {/* 1. Top Scrolling Announcement Bar */}
       <AnnouncementBar />
 
-      {/* 2. Sticky primary navigation and logo */}
-      <Header 
-        cartCount={totalCartCount} 
+      {/* 2. Fixed Luxury Header Navigation (Word Wrapping & Alignment Fixed) */}
+      <Header
+        cartCount={totalCartCount}
+        wishlistCount={wishlist.length}
         onCartOpen={() => setIsCartOpen(true)}
         onSearchOpen={() => setIsSearchOpen(true)}
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
       />
 
-      {/* 3. Luxury Hero Section */}
-      <section 
-        className="hero-section" 
-        style={{ backgroundImage: `url(${heroLuxuryImg})` }}
-      >
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <span className="hero-eyebrow">Handcrafted & Sustainable</span>
-          <h1 className="hero-title">Annette Pure</h1>
-          <p className="hero-tagline">
-            Elegance translated through scent. Hand-poured organic soy candles.
-          </p>
-          <a href="#bestsellers" className="btn-luxury-cta">
-            Shop Now
-          </a>
-        </div>
-      </section>
+      {/* 3. Main Multi-Page Route Render */}
+      <main className="main-content-wrapper">
+        
+        {currentPage === 'home' && (
+          <HomePage
+            onQuickView={handleQuickView}
+            onAddToCart={handleAddToCart}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-      <main>
-        {/* 4. Shop by Category (3-column grid) */}
-        <CategoryGrid />
+        {currentPage === 'shop' && (
+          <ShopPage
+            initialCategory={navParams.category || 'All Candles'}
+            initialSearchQuery={navParams.searchQuery || ''}
+            onQuickView={handleQuickView}
+            onAddToCart={handleAddToCart}
+            onNavigate={handleNavigate}
+            wishlist={wishlist}
+            onToggleWishlist={handleToggleWishlist}
+          />
+        )}
 
-        {/* 6. USP icon strip row (4 columns) */}
-        <USPStrip />
+        {currentPage === 'product' && (
+          <ProductDetailPage
+            product={navParams.product || PRODUCTS[0]}
+            onAddToCart={handleAddToCart}
+            onNavigate={handleNavigate}
+            wishlist={wishlist}
+            onToggleWishlist={handleToggleWishlist}
+          />
+        )}
 
-        {/* 5. Bestsellers carousel (8 products with quick view) */}
-        <Bestsellers 
-          onQuickView={handleQuickView}
-          onAddToCart={handleAddToCart}
-        />
+        {currentPage === 'private-label' && (
+          <PrivateLabelPage
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 5 (PARENT). Top Picks for the Season showcase carousel */}
-        <TopPicks />
+        {currentPage === 'samples' && (
+          <SamplesPage
+            onAddToCart={handleAddToCart}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 5.1 & 5.2. Split informational features (Founder's & Private Label) */}
-        <FeatureBlocks />
+        {currentPage === 'boutique' && (
+          <BoutiquePage
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 5.3 & 5.4 & 5.5. Promo seasonal banner & Boutique/Wellness grid tiles */}
-        <PromoSections />
+        {currentPage === 'story' && (
+          <OurStoryPage
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 13 & 14. Brand Stories (Craftsmanship & Philosophy split columns) */}
-        <BrandStories />
+        {currentPage === 'media' && (
+          <MediaPage
+            initialTab={navParams.tab || 'blog'}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 15. Customer reviews carousel (7 cards) */}
-        <Testimonials />
+        {currentPage === 'events' && (
+          <EventsPage
+            initialTab={navParams.tab || 'corporate'}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 8. Brand video and mission statement block */}
-        <BrandVideo />
+        {currentPage === 'checkout' && (
+          <CheckoutPage
+            cartItems={cartItems}
+            onClearCart={handleClearCart}
+            onNavigate={handleNavigate}
+            appliedDiscount={navParams.appliedDiscount || 0}
+            initialGiftMessage={navParams.giftMessage || ''}
+            onAddOrder={handleAddOrder}
+          />
+        )}
 
-        {/* 16. Anniversary milestone banner (stacked split columns) */}
-        <MilestoneBanner />
+        {currentPage === 'account' && (
+          <AccountPage
+            initialTab={navParams.tab || 'overview'}
+            orders={orders}
+            wishlist={wishlist}
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* 18. Support & trust payment method icons strip */}
-        <SupportStrip />
+        {currentPage === 'contact' && (
+          <ContactFaqPage
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {currentPage === 'policies' && (
+          <PoliciesPage
+            initialTab={navParams.tab || 'returns'}
+            onNavigate={handleNavigate}
+          />
+        )}
+
       </main>
 
-      {/* 19. Footer column structures and newsletter form */}
-      <Footer />
+      {/* 4. Luxury Footer with Direct Page Links */}
+      <Footer onNavigate={handleNavigate} />
 
-      {/* Slide-out Cart Drawer from the right */}
+      {/* 5. Slide-Out Scent Bag / Cart Drawer */}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}
         onUpdateQty={handleUpdateQty}
         onRemoveItem={handleRemoveItem}
+        onNavigate={handleNavigate}
       />
 
-      {/* Slide-out Search Overlay from the top */}
+      {/* 6. Live Instant Search Drawer */}
       <SearchDrawer
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        onSearch={handleSearchSubmit}
+        onNavigate={handleNavigate}
       />
 
-      {/* Centered Quick View Details Modal */}
+      {/* 7. Quick View Modal */}
       <QuickViewModal
         product={quickViewProduct}
         isOpen={isQuickViewOpen}
         onClose={() => setIsQuickViewOpen(false)}
         onAddToCart={handleAddToCart}
+        onNavigate={handleNavigate}
       />
+
     </div>
   );
 }

@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
+import { Search, User, ShoppingBag, Heart, Menu, X, ChevronDown } from 'lucide-react';
 
-export default function Header({ cartCount, onCartOpen, onSearchOpen }) {
+export default function Header({ 
+  cartCount = 0, 
+  wishlistCount = 0,
+  onCartOpen, 
+  onSearchOpen,
+  currentPage = 'home',
+  onNavigate 
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileExpandedDropdown, setMobileExpandedDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('Home');
 
   // Track scroll position to trigger transparent-to-solid transitions
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -19,203 +26,286 @@ export default function Header({ cartCount, onCartOpen, onSearchOpen }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleAccountClick = () => {
-    alert("Account log-in is a mock feature for this demo.");
-  };
-
   const navLinks = [
     { 
       name: 'Candles', 
-      link: '#bestsellers',
+      page: 'shop',
+      category: 'All Candles',
       dropdown: [
-        { name: "Founder's", link: "#founders" },
-        { name: "Luxury", link: "#seasonal" },
-        { name: "For Him", link: "#founders" },
-        { name: "Wellness", link: "#wellness" },
-        { name: "Heirloom Artisan", link: "#story" },
-        { name: "Heirloom Murano Glass", link: "#tiles" },
-        { name: "Heirloom Tomato", link: "#tiles" },
-        { name: "Travel", link: "#all" },
-        { name: "Accessories", link: "#boutique" },
-        { name: "Samples", link: "#samples" },
-        { name: "Gift Card", link: "#giftcards" },
-        { name: "View All", link: "#bestsellers" }
+        { name: "Founder's Collection", page: 'shop', category: "Founder's", badge: "Signature" },
+        { name: "Luxury Collection", page: 'shop', category: "Luxury" },
+        { name: "For Him Collection", page: 'shop', category: "For Him" },
+        { name: "Wellness & Aromatherapy", page: 'shop', category: "Wellness" },
+        { name: "Heirloom Artisan", page: 'shop', category: "Heirloom Artisan" },
+        { name: "Heirloom Murano Glass", page: 'shop', category: "Heirloom Murano Glass", badge: "Exclusive" },
+        { name: "Heirloom Tomato & Basil", page: 'shop', category: "Heirloom Tomato" },
+        { name: "Discovery Samples", page: 'samples', category: "Samples" },
+        { name: "Artisan Accessories", page: 'shop', category: "Accessories" },
+        { name: "View All Candles", page: 'shop', category: "All Candles" }
       ]
     },
-    { name: 'Private Label', link: '#private-label' },
-    { name: 'Sample Fragrances', link: '#samples' },
-    { name: 'Boutique', link: '#boutique' },
-    { name: 'Our Story', link: '#story' },
+    { name: 'Private Label', page: 'private-label' },
+    { name: 'Sample Fragrances', page: 'samples' },
+    { name: 'Boutique', page: 'boutique' },
+    { name: 'Our Story', page: 'story' },
     { 
       name: 'Media', 
-      link: '#blog',
+      page: 'media',
       dropdown: [
-        { name: 'Blog', link: '#blog' },
-        { name: 'YouTube Podcast', link: '#podcast' }
+        { name: 'Scent Journal (Blog)', page: 'media', tab: 'blog' },
+        { name: 'YouTube Podcast', page: 'media', tab: 'podcast' },
+        { name: 'Press & Accolades', page: 'media', tab: 'press' }
       ]
     },
     { 
       name: 'Private Events & Gifting', 
-      link: '#workshops',
+      page: 'events',
       dropdown: [
-        { name: 'Corporate Workshops', link: '#workshops' },
-        { name: 'Corporate Gifting', link: '#corporate' },
-        { name: 'Private Candle Workshops', link: '#workshops' }
+        { name: 'Corporate Workshops', page: 'events', tab: 'corporate' },
+        { name: 'Corporate Gifting Concierge', page: 'events', tab: 'gifting' },
+        { name: 'Private Candle Workshops', page: 'events', tab: 'private' }
       ]
     }
   ];
+
+  const handleNavClick = (page, category = null, tab = null) => {
+    if (onNavigate) {
+      onNavigate(page, { category, tab });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMobileDropdown = (name) => {
+    setMobileExpandedDropdown(prev => prev === name ? null : name);
+  };
 
   return (
     <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         
-        {/* Left Side: Brand Logo Wordmark with Elegant Flame Icon */}
+        {/* Left Side: Brand Logo Wordmark with Elegant Flame Script */}
         <div className="header-logo-group">
-          {/* Mobile hamburger menu */}
           <button 
             className="icon-btn mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
           
-          <a href="/" className="header-logo-container">
+          <button 
+            onClick={() => handleNavClick('home')} 
+            className="header-logo-container"
+            aria-label="Annette Pure Home"
+          >
             <span className="logo-script-accent">A</span>
             <div className="logo-text-group">
               <span className="logo-wordmark">Nnette Pure</span>
-              <span className="logo-submark">Candles</span>
+              <span className="logo-submark">Candles &bull; Laguna Beach</span>
             </div>
-          </a>
+          </button>
         </div>
 
-        {/* Center: Desktop Navigation Links with dropdown triggers */}
-        <nav className="desktop-nav">
+        {/* Center: Desktop Navigation Bar with Smooth Chevrons & Glassmorphic Dropdowns */}
+        <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="nav-menu">
-            {navLinks.map((nav) => (
-              <li 
-                className={`nav-item ${activeLink === nav.name ? 'active' : ''} ${nav.dropdown ? 'has-dropdown' : ''}`} 
-                key={nav.name}
-                onClick={() => setActiveLink(nav.name)}
-              >
-                <a href={nav.link} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  {nav.name}
-                  {nav.dropdown && <span style={{ fontSize: '0.55rem', transition: 'transform 0.2s' }}>▼</span>}
-                </a>
-                
-                {nav.dropdown && (
-                  <ul className="nav-dropdown">
-                    {nav.dropdown.map((sub) => (
-                      <li key={sub.name}>
-                        <a href={sub.link} className="dropdown-link">{sub.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+            {navLinks.map((nav) => {
+              const isActive = currentPage === nav.page;
+              return (
+                <li 
+                  className={`nav-item ${isActive ? 'active' : ''} ${nav.dropdown ? 'has-dropdown' : ''}`} 
+                  key={nav.name}
+                >
+                  <button 
+                    className="nav-link-btn"
+                    onClick={() => handleNavClick(nav.page, nav.category)}
+                  >
+                    <span>{nav.name}</span>
+                    {nav.dropdown && (
+                      <ChevronDown size={11} className="nav-dropdown-chevron" />
+                    )}
+                  </button>
+                  
+                  {nav.dropdown && (
+                    <div className="nav-dropdown-wrapper">
+                      <ul className="nav-dropdown">
+                        {nav.dropdown.map((sub) => (
+                          <li key={sub.name} className="dropdown-item">
+                            <button 
+                              className="dropdown-link"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleNavClick(sub.page, sub.category, sub.tab);
+                              }}
+                            >
+                              <span className="dropdown-link-text">{sub.name}</span>
+                              {sub.badge && (
+                                <span className="dropdown-link-badge">{sub.badge}</span>
+                              )}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
-        {/* Right Side Actions: Search, Account, Cart + Luxury Shop Now CTA */}
+        {/* Right Side Actions: Search, Wishlist, Account, Cart + Luxury Shop Now CTA */}
         <div className="header-actions">
           <div className="header-icons">
-            <button className="icon-btn" onClick={onSearchOpen} aria-label="Search collection">
-              <Search size={20} strokeWidth={1.5} />
+            <button 
+              className="icon-btn" 
+              onClick={onSearchOpen} 
+              aria-label="Search collection"
+              title="Search collection"
+            >
+              <Search size={19} strokeWidth={1.5} />
             </button>
-            <button className="icon-btn" onClick={handleAccountClick} aria-label="Customer account">
-              <User size={20} strokeWidth={1.5} />
+            
+            <button 
+              className="icon-btn" 
+              onClick={() => handleNavClick('account', null, 'wishlist')} 
+              aria-label="Your wishlist"
+              title="Wishlist"
+            >
+              <Heart size={19} strokeWidth={1.5} />
+              {wishlistCount > 0 && (
+                <span className="icon-badge wishlist-badge">{wishlistCount}</span>
+              )}
             </button>
-            <button className="icon-btn" onClick={onCartOpen} aria-label="Shopping cart">
-              <ShoppingBag size={20} strokeWidth={1.5} />
-              {cartCount > 0 && <span className="cart-count-badge">{cartCount}</span>}
+
+            <button 
+              className="icon-btn" 
+              onClick={() => handleNavClick('account')} 
+              aria-label="Customer account portal"
+              title="My Account"
+            >
+              <User size={19} strokeWidth={1.5} />
+            </button>
+
+            <button 
+              className="icon-btn cart-btn-trigger" 
+              onClick={onCartOpen} 
+              aria-label="Shopping bag"
+              title="Shopping Bag"
+            >
+              <ShoppingBag size={19} strokeWidth={1.5} />
+              {cartCount > 0 && (
+                <span className="icon-badge cart-count-badge">{cartCount}</span>
+              )}
             </button>
           </div>
-          <a href="#bestsellers" className="btn-luxury-cta">
+
+          <button 
+            onClick={() => handleNavClick('shop')} 
+            className="btn-luxury-cta header-shop-btn"
+          >
             Shop Now
-          </a>
+          </button>
         </div>
 
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Slide-Out Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="mobile-drawer-menu" style={{
-          position: 'fixed',
-          top: '90px',
-          left: 0,
-          width: '100%',
-          height: 'calc(100vh - 90px)',
-          backgroundColor: 'var(--bg-primary)',
-          borderTop: '1px solid var(--border-color)',
-          zIndex: 990,
-          overflowY: 'auto',
-          padding: '30px 20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px'
-        }}>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
-            {navLinks.map((nav) => (
-              <li key={nav.name} style={{ textAlign: 'left', borderBottom: '1px solid rgba(226, 221, 213, 0.3)', paddingBottom: '15px' }}>
-                <a 
-                  href={nav.link} 
-                  onClick={() => {
-                    if (!nav.dropdown) {
-                      setActiveLink(nav.name);
-                      setMobileMenuOpen(false);
-                    }
-                  }} 
-                  style={{ 
-                    fontSize: '0.9rem', 
-                    letterSpacing: '0.15em', 
-                    textTransform: 'uppercase', 
-                    fontWeight: 600,
-                    fontFamily: 'var(--font-heading)',
-                    color: activeLink === nav.name ? 'var(--accent-gold)' : 'var(--text-main)',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}
-                >
-                  {nav.name}
-                </a>
+        <div className="mobile-drawer-menu">
+          <div className="mobile-drawer-inner">
+            <div className="mobile-drawer-header">
+              <span className="mobile-drawer-tagline">Handcrafted Luxury Scents</span>
+              <button 
+                className="icon-btn" 
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
-                {nav.dropdown && (
-                  <ul style={{ 
-                    listStyle: 'none', 
-                    paddingLeft: '10px', 
-                    display: 'grid', 
-                    gridTemplateColumns: '1fr 1fr', 
-                    gap: '8px 15px', 
-                    marginTop: '10px' 
-                  }}>
-                    {nav.dropdown.map((sub) => (
-                      <li key={sub.name}>
-                        <a 
-                          href={sub.link} 
-                          onClick={() => {
-                            setActiveLink(nav.name);
-                            setMobileMenuOpen(false);
-                          }}
-                          style={{ 
-                            fontSize: '0.75rem', 
-                            letterSpacing: '0.08em', 
-                            textTransform: 'uppercase', 
-                            color: 'var(--text-muted)',
-                            display: 'block',
-                            padding: '3px 0'
-                          }}
-                        >
-                          {sub.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+            <ul className="mobile-nav-list">
+              <li className="mobile-nav-item">
+                <button 
+                  className={`mobile-nav-link ${currentPage === 'home' ? 'active' : ''}`}
+                  onClick={() => handleNavClick('home')}
+                >
+                  Home
+                </button>
               </li>
-            ))}
-          </ul>
+
+              {navLinks.map((nav) => {
+                const isExpanded = mobileExpandedDropdown === nav.name;
+                return (
+                  <li key={nav.name} className="mobile-nav-item">
+                    <div className="mobile-nav-link-row">
+                      <button 
+                        className={`mobile-nav-link ${currentPage === nav.page ? 'active' : ''}`}
+                        onClick={() => {
+                          if (!nav.dropdown) {
+                            handleNavClick(nav.page, nav.category);
+                          } else {
+                            toggleMobileDropdown(nav.name);
+                          }
+                        }}
+                      >
+                        {nav.name}
+                      </button>
+                      {nav.dropdown && (
+                        <button 
+                          className="mobile-expand-btn"
+                          onClick={() => toggleMobileDropdown(nav.name)}
+                          aria-label="Expand submenu"
+                        >
+                          <ChevronDown 
+                            size={16} 
+                            style={{ 
+                              transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                              transition: 'transform 0.25s ease' 
+                            }} 
+                          />
+                        </button>
+                      )}
+                    </div>
+
+                    {nav.dropdown && isExpanded && (
+                      <ul className="mobile-submenu">
+                        {nav.dropdown.map((sub) => (
+                          <li key={sub.name} className="mobile-subitem">
+                            <button 
+                              className="mobile-sublink"
+                              onClick={() => handleNavClick(sub.page, sub.category, sub.tab)}
+                            >
+                              <span>{sub.name}</span>
+                              {sub.badge && <span className="mobile-badge">{sub.badge}</span>}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mobile-drawer-footer">
+              <button 
+                className="btn-luxe btn-solid mobile-shop-all-btn"
+                onClick={() => handleNavClick('shop')}
+              >
+                Explore Full Collection
+              </button>
+              
+              <div className="mobile-footer-links">
+                <button onClick={() => handleNavClick('account')}>My Account</button>
+                <span>&bull;</span>
+                <button onClick={() => handleNavClick('contact')}>Help & FAQ</button>
+                <span>&bull;</span>
+                <button onClick={() => handleNavClick('boutique')}>Store Hours</button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </header>
