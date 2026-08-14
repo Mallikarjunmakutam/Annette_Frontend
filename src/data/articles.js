@@ -2,7 +2,7 @@ import wellnessImg from '../assets/wellness_collection.png';
 import foundersImg from '../assets/founders_collection.png';
 import boutiqueImg from '../assets/boutique_collection.png';
 import milestoneImg from '../assets/milestone_banner.png';
-import brandVideoMock from '../assets/brand_video_mock.png';
+import carousel1Img from '../assets/carousel_1.png';
 
 export const BLOG_POSTS = [
   {
@@ -12,7 +12,7 @@ export const BLOG_POSTS = [
     date: "August 2026",
     category: "Fragrance Guide",
     readTime: "5 min read",
-    author: "Annette Makutam, Founder",
+    author: "Atelier Fragrance Lab",
     image: boutiqueImg,
     summary: "How to harmonize woody basenotes with fresh florals across different rooms to create a seamless olfactory sanctuary in your living spaces.",
     content: `
@@ -25,7 +25,7 @@ export const BLOG_POSTS = [
       Avoid heavy gourmands or overly sweet florals near food. Instead, celebrate culinary botanical notes—sun-ripened tomato vine, fresh sweet basil, and citrus peel. Lighting *Heirloom Tomato & Basil* thirty minutes before guests arrive awakens the palate.
 
       ### 3. The Master Sanctuary: Calming Lavender & Coconut Cream
-      Your bedroom and bath should signal to your nervous system that it is time to unwind. Pure French lavender blossoms paired with creamy coconut milk in our *Perloat* candle soothe circadian rhythms and facilitate restorative sleep.
+      Your bedroom and bath should signal to your nervous system that it is time to unwind. Pure Kashmiri lavender blossoms paired with creamy coconut milk in our *Perloat* candle soothe circadian rhythms and facilitate restorative sleep.
     `
   },
   {
@@ -35,14 +35,14 @@ export const BLOG_POSTS = [
     date: "July 2026",
     category: "Clean Living",
     readTime: "6 min read",
-    author: "Dr. Clara Evans, Environmental Chemist",
+    author: "Botanical Research Collective",
     image: wellnessImg,
     summary: "Understanding the science behind non-toxic candles: the difference between paraffin petroleum wax and sustainably sourced botanical soy.",
     content: `
       Many commercial candles are cast from paraffin wax—a petroleum by-product that releases benzene and toluene compounds into your indoor air when burned. At ANNETTE PURE, we made a strict commitment over two decades ago to pour only 100% natural, certified non-GMO organic soy wax.
 
       ### The Clean Burn Advantage
-      - **Zero Petrochemicals**: Soy wax is derived directly from renewable American soybeans.
+      - **Zero Petrochemicals**: Soy wax is derived directly from renewable, plant-based sources.
       - **Cooler, Longer Burn**: Soy wax melts at a lower temperature, resulting in a burn time that is 40-50% longer than paraffin equivalents.
       - **Lead-Free Cotton Wicks**: We use unbleached, braided cotton wicks that prevent black soot buildup on your walls and ceilings.
       - **Phthalate-Free Fragrance Oils**: Our botanical extracts are certified free from parabens, phthalates, and reproductive toxins.
@@ -77,45 +77,45 @@ export const PODCAST_EPISODES = [
   {
     id: 1,
     title: "Episode 18: The Psychology of Scent & Memory Architecture",
-    host: "Annette Makutam & Guest Chandler Marcel Dupont",
+    host: "Annette Pure Atelier & Guest Master Perfumer",
     duration: "42 min",
     date: "August 2026",
-    thumbnail: brandVideoMock,
+    thumbnail: carousel1Img,
     audioUrl: "#",
     description: "An intimate exploration into how olfactory receptors trigger deep limbic memory faster than sight or sound, and how bespoke hotels design invisible brand identities."
   },
   {
     id: 2,
-    title: "Episode 17: Sustainable Alchemy — From Soybean Fields to Luxury Vessels",
-    host: "Annette Makutam & Organic Farm Director Tyler Vance",
+    title: "Episode 17: Sustainable Alchemy — From Botanical Fields to Luxury Vessels",
+    host: "Annette Pure Atelier & Botanical Farm Collective",
     duration: "36 min",
     date: "July 2026",
     thumbnail: milestoneImg,
     audioUrl: "#",
-    description: "A behind-the-scenes discussion on zero-waste farming, regenerative agriculture, and creating carbon-neutral candle packaging."
+    description: "A behind-the-scenes discussion on zero-waste farming, regenerative agriculture, and creating carbon-neutral candle packaging in India."
   },
   {
     id: 3,
-    title: "Episode 16: Building an Artisan Brand in California for 22 Years",
-    host: "Annette Makutam & Design Editor Maya Lin",
+    title: "Episode 16: Building an Artisan Candle Atelier — Two Decades of Heritage",
+    host: "Annette Pure Atelier & Design Editors",
     duration: "48 min",
     date: "June 2026",
     thumbnail: foundersImg,
     audioUrl: "#",
-    description: "Reflections on 22 years of hand-pouring candles in Laguna Beach, preserving artisan traditions in an era of automated mass production."
+    description: "Reflections on over 20 years of hand-pouring luxury soy candles, preserving master chandler traditions in an era of automated mass production."
   }
 ];
 
 export const PRESS_FEATURES = [
   {
-    outlet: "VOGUE LIVING",
-    quote: "Annette Pure captures the subtle, sun-drenched coastal elegance of Southern California with botanical sophistication.",
+    outlet: "VOGUE INDIA",
+    quote: "Annette Pure captures pure botanical elegance and subtle luxury with exquisite natural formulation.",
     year: "2026",
-    articleTitle: "Top 10 Sustainable Luxury Home Scents"
+    articleTitle: "Top Sustainable Luxury Home Fragrances in India"
   },
   {
     outlet: "ARCHITECTURAL DIGEST",
-    quote: "These hand-blown vessels are sculptural masterpieces that elevate any mantle even before they are lit.",
+    quote: "These hand-blown vessels are sculptural masterpieces that elevate any living space even before they are lit.",
     year: "2026",
     articleTitle: "The Interior Designer's Guide to Home Fragrance"
   },
@@ -126,8 +126,8 @@ export const PRESS_FEATURES = [
     articleTitle: "Clean Luxury: The Brands Changing Home Wellness"
   },
   {
-    outlet: "FORBES LUXURY",
-    quote: "Annette Pure's bespoke private label program has quietly crafted signature scents for the world's most discerning boutique hotels.",
+    outlet: "FORBES INDIA LUXURY",
+    quote: "Annette Pure's bespoke private label program has quietly crafted signature scents for the finest boutique properties.",
     year: "2025",
     articleTitle: "The Invisible Art of Olfactory Branding"
   }

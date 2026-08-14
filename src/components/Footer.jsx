@@ -29,8 +29,8 @@ export default function Footer({ onNavigate }) {
         <div className="footer-perk-item">
           <Truck size={18} className="footer-perk-icon" />
           <div>
-            <strong>Complimentary U.S. Shipping</strong>
-            <span>On all qualifying orders over $150</span>
+            <strong>Complimentary Pan-India Shipping</strong>
+            <span>On all qualifying orders over ₹1,499</span>
           </div>
         </div>
         <div className="footer-perk-item">
@@ -43,15 +43,15 @@ export default function Footer({ onNavigate }) {
         <div className="footer-perk-item">
           <RefreshCw size={18} className="footer-perk-icon" />
           <div>
-            <strong>30-Day Happiness Guarantee</strong>
+            <strong>Happiness Guarantee</strong>
             <span>Hassle-free returns & complimentary exchanges</span>
           </div>
         </div>
         <div className="footer-perk-item">
           <Heart size={18} className="footer-perk-icon" />
           <div>
-            <strong>22 Years of Craftsmanship</strong>
-            <span>Hand-poured with love in Laguna Beach, CA</span>
+            <strong>20+ Years of Craftsmanship</strong>
+            <span>Hand-poured with intention in India</span>
           </div>
         </div>
       </div>
@@ -64,16 +64,16 @@ export default function Footer({ onNavigate }) {
             <span className="footer-script-a">A</span>
             <div>
               <h3 className="footer-brand-title">ANNETTE PURE</h3>
-              <span className="footer-brand-sub">LUXURY CANDLES &bull; EST. 2004</span>
+              <span className="footer-brand-sub">HANDMADE SOY CANDLES</span>
             </div>
           </div>
           <p className="footer-newsletter-text">
-            Crafting small-batch, sustainably sourced scented candles designed with intention and poured by hand in Southern California. Elegance translated through scent.
+            Crafting small-batch, sustainably sourced scented candles designed with intention and poured by hand in our Indian atelier. Elegance translated through pure botanical scent.
           </p>
           <div className="footer-contact-snippet">
-            <p>Flagship Atelier: 821 Forest Ave, Laguna Beach, CA</p>
-            <p>Concierge: (888) 383-8934</p>
-            <p>Inquiries: atelier@annettepure.com</p>
+            <p>Flagship Atelier: Bandra West, Mumbai & Indiranagar, Bengaluru</p>
+            <p>Concierge: +91 98200 12345 / 1800-266-8730</p>
+            <p>Inquiries: concierge@annettepure.in</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function Footer({ onNavigate }) {
         <div className="footer-column">
           <h4 className="footer-title">Collections</h4>
           <ul className="footer-links">
-            <li><button onClick={() => handleLink('shop', null, "Founder's")}>Founder's Collection</button></li>
+            <li><button onClick={() => handleLink('shop', null, 'Signature Atelier')}>Signature Atelier Reserve</button></li>
             <li><button onClick={() => handleLink('shop', null, 'Luxury')}>Luxury Scent Reserve</button></li>
             <li><button onClick={() => handleLink('shop', null, 'Wellness')}>Wellness & Calm</button></li>
             <li><button onClick={() => handleLink('shop', null, 'For Him')}>For Him Collection</button></li>
@@ -97,11 +97,11 @@ export default function Footer({ onNavigate }) {
           <ul className="footer-links">
             <li><button onClick={() => handleLink('private-label')}>Bespoke Private Label</button></li>
             <li><button onClick={() => handleLink('events', 'corporate')}>Corporate Workshops</button></li>
-            <li><button onClick={() => handleLink('events', 'gifting')}>Corporate Gifting</button></li>
-            <li><button onClick={() => handleLink('boutique')}>Laguna Boutique & Refills</button></li>
-            <li><button onClick={() => handleLink('story')}>Our 22-Year Story</button></li>
+            <li><button onClick={() => handleLink('events', 'gifting')}>Corporate & Wedding Gifting</button></li>
+            <li><button onClick={() => handleLink('boutique')}>Atelier Boutiques & Refills</button></li>
+            <li><button onClick={() => handleLink('story')}>Our Atelier Heritage</button></li>
             <li><button onClick={() => handleLink('media', 'blog')}>Scent Journal (Blog)</button></li>
-            <li><button onClick={() => handleLink('media', 'podcast')}>"Behind The Flame" Podcast</button></li>
+            <li><button onClick={() => handleLink('media', 'podcast')}>"Behind The Flame" Audio</button></li>
           </ul>
         </div>
 
@@ -114,7 +114,7 @@ export default function Footer({ onNavigate }) {
             <li><button onClick={() => handleLink('account', 'tracking')}>Track Your Order</button></li>
             <li><button onClick={() => handleLink('account', 'subscriptions')}>Manage Subscription</button></li>
             <li><button onClick={() => handleLink('policies', 'returns')}>Returns & Exchanges</button></li>
-            <li><button onClick={() => handleLink('policies', 'shipping')}>Shipping Policy</button></li>
+            <li><button onClick={() => handleLink('policies', 'shipping')}>Shipping & Delivery Policy</button></li>
             <li><button onClick={() => handleLink('policies', 'privacy')}>Privacy & Terms</button></li>
           </ul>
         </div>
@@ -123,7 +123,7 @@ export default function Footer({ onNavigate }) {
         <div className="footer-column newsletter-col">
           <h4 className="footer-title">The Annette Pure Circle</h4>
           <p className="footer-newsletter-text">
-            Subscribe to receive private vault allocations, early holiday scent releases, and invitations to boutique workshops.
+            Subscribe to receive private vault allocations, seasonal festive releases, and invitations to masterclass candle workshops.
           </p>
           
           <form onSubmit={handleSubscribe} className="newsletter-form">
@@ -170,19 +170,18 @@ export default function Footer({ onNavigate }) {
       <div className="footer-bottom">
         <div className="footer-currency-wrapper">
           <span className="currency-label">Region & Currency:</span>
-          <select className="currency-selector" defaultValue="USD" aria-label="Select Currency">
+          <select className="currency-selector" defaultValue="INR" aria-label="Select Currency">
+            <option value="INR">INR (₹) &bull; India</option>
             <option value="USD">USD ($) &bull; United States</option>
-            <option value="CAD">CAD ($) &bull; Canada</option>
             <option value="EUR">EUR (€) &bull; European Union</option>
             <option value="GBP">GBP (£) &bull; United Kingdom</option>
-            <option value="INR">INR (₹) &bull; India</option>
-            <option value="JPY">JPY (¥) &bull; Japan</option>
-            <option value="AUD">AUD ($) &bull; Australia</option>
+            <option value="AED">AED (د.إ) &bull; UAE</option>
+            <option value="SGD">SGD ($) &bull; Singapore</option>
           </select>
         </div>
         
         <p className="copyright-text">
-          &copy; {new Date().getFullYear()} ANNETTE PURE CANDLES. All Rights Reserved. Master Hand-Poured in Laguna Beach, California.
+          &copy; {new Date().getFullYear()} ANNETTE PURE CANDLES. All Rights Reserved. Master Hand-Poured in India.
         </p>
       </div>
 

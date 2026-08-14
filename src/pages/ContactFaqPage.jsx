@@ -20,38 +20,38 @@ export default function ContactFaqPage({ onNavigate }) {
     {
       id: 0,
       category: "shipping",
-      question: "What are your shipping rates and delivery times?",
-      answer: "We offer complimentary standard ground shipping on all U.S. orders of $150 or more. For orders under $150, standard shipping is a flat rate of $6.95 (3-5 business days). We also provide Express 2-Day Air ($14.95) and White-Glove Luxury Delivery ($24.95)."
+      question: "What are your shipping rates and delivery times across India?",
+      answer: "We offer complimentary standard express shipping on all Pan-India orders of ₹1,499 or more. For orders under ₹1,499, standard shipping is a flat rate of ₹99 (2-4 business days). We also provide Express Air Priority (₹199 via Blue Dart / Delhivery) and White-Glove Luxury Delivery (₹399)."
     },
     {
       id: 1,
       category: "care",
       question: "How do I prevent my candle from tunneling?",
-      answer: "Wax has memory! On the very first burn, allow your candle to burn for 3 to 4 hours, or until the liquid melt pool extends all the way to the edges of the glass vessel. This ensures an even, flat burn for the life of the candle."
+      answer: "Wax has memory! On the very first burn, allow your candle to burn for 3 to 4 hours, or until the liquid melt pool extends all the way to the edges of the glass vessel. This ensures an even, flat burn for the entire life of the candle."
     },
     {
       id: 2,
       category: "ingredients",
       question: "What kind of wax and wicks do you use?",
-      answer: "We strictly use 100% natural, American-grown organic soy wax. Our wicks are braided from pure unbleached cotton and paper filaments—never lead or zinc. Our fragrance oils are IFRA-compliant, vegan, cruelty-free, and certified 100% free of phthalates, parabens, and petroleum."
+      answer: "We strictly use 100% natural, sustainably farmed organic soy wax. Our wicks are braided from pure unbleached cotton and paper filaments—never lead or zinc. Our fragrance oils are IFRA-compliant, vegan, cruelty-free, and certified 100% free of phthalates, parabens, and petroleum."
     },
     {
       id: 3,
       category: "returns",
       question: "What is your 30-Day Happiness Guarantee?",
-      answer: "We want you to love your home scent. If a fragrance doesn't resonate with you, contact our concierge within 30 days of delivery. We will gladly provide a prepaid return label for a complimentary exchange or full refund to your original payment method."
+      answer: "We want you to love your home scent. If a fragrance doesn't resonate with you, contact our concierge within 30 days of delivery. We will gladly arrange a complimentary exchange or full refund to your original payment method."
     },
     {
       id: 4,
       category: "custom",
-      question: "Can I order custom candles for my business or wedding?",
-      answer: "Yes! Our bespoke Private Label and Corporate Gifting programs start at accessible minimum order quantities of 100 units. We formulate custom scents, screen-print vessels, and laser-engrave brass lids with turnarounds in 3-4 weeks."
+      question: "Can I order custom candles for my business, hotel, or wedding?",
+      answer: "Yes! Our bespoke Private Label and Corporate Gifting programs start at accessible minimum order quantities of 100 units. We formulate custom scents, screen-print vessels, and laser-engrave brass lids with turnarounds in 3-4 weeks across India."
     },
     {
       id: 5,
       category: "care",
       question: "How should I clean and repurpose my empty glass vessel?",
-      answer: "When approximately 1/2 inch of wax remains, safely extinguish the candle. Pour hot water into the vessel to float remaining wax to the top. Once cooled, discard wax, wash with warm soapy water, and bring it to our Laguna boutique for a half-price refill or use it as a whiskey tumbler or planter!"
+      answer: "When approximately 1/2 inch of wax remains, safely extinguish the candle. Pour hot water into the vessel to float remaining wax to the top. Once cooled, discard wax, wash with warm soapy water, and bring it to our atelier for a refill or repurpose it as a planter or desk organizer!"
     }
   ];
 
@@ -72,9 +72,9 @@ export default function ContactFaqPage({ onNavigate }) {
         <div className="contact-hero-overlay" />
         <div className="contact-hero-content">
           <span className="contact-eyebrow">Customer Care & Olfactory Advice</span>
-          <h1 className="contact-title">Frequently Asked Questions & Contact</h1>
+          <h1 className="contact-title">Frequently Asked Questions & Concierge</h1>
           <p className="contact-tagline">
-            Our atelier concierge team in Laguna Beach is here to assist with order tracking, custom gifting inquiries, and scent recommendations.
+            Our atelier concierge team in India is here to assist with order tracking, custom gifting inquiries, and scent recommendations.
           </p>
         </div>
       </section>
@@ -86,21 +86,21 @@ export default function ContactFaqPage({ onNavigate }) {
           <div className="contact-info-card">
             <Phone size={22} className="info-card-icon" />
             <h3>Concierge Helpline</h3>
-            <p>(888) 383-8934</p>
-            <span>Mon &ndash; Sat, 9am &ndash; 6pm PST</span>
+            <p>+91 98200 12345 / 1800-266-8730</p>
+            <span>Mon &ndash; Sat, 10am &ndash; 7pm IST</span>
           </div>
 
           <div className="contact-info-card">
             <Mail size={22} className="info-card-icon" />
             <h3>Email Support</h3>
-            <p>atelier@annettepure.com</p>
-            <span>Average response: Under 4 hours</span>
+            <p>concierge@annettepure.in</p>
+            <span>Average response: Under 2 hours</span>
           </div>
 
           <div className="contact-info-card">
             <MapPin size={22} className="info-card-icon" />
-            <h3>Flagship Boutique</h3>
-            <p>821 Forest Ave, Laguna Beach, CA</p>
+            <h3>Flagship Ateliers</h3>
+            <p>South Mumbai & Indiranagar, Bengaluru</p>
             <span>Open daily for scent consultations</span>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function ContactFaqPage({ onNavigate }) {
                   <Check size={36} />
                 </div>
                 <h3>Message Sent, {contactData.name}!</h3>
-                <p>Thank you for reaching out. Our concierge team in Laguna Beach will review your inquiry and get back to <strong>{contactData.email}</strong> within a few hours.</p>
+                <p>Thank you for reaching out. Our concierge team in India will review your inquiry and get back to <strong>{contactData.email}</strong> promptly.</p>
                 <button 
                   className="btn-luxury-cta"
                   onClick={() => setContactSubmitted(false)}
@@ -204,11 +204,11 @@ export default function ContactFaqPage({ onNavigate }) {
                 
                 <div className="form-grid-2">
                   <div className="form-group">
-                    <label>Your Full Name *</label>
+                    <label>Your Name *</label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Eleanor Vance"
+                      placeholder="e.g. Verified Patron"
                       value={contactData.name}
                       onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
                       className="form-input"
@@ -219,7 +219,7 @@ export default function ContactFaqPage({ onNavigate }) {
                     <input
                       type="email"
                       required
-                      placeholder="eleanor@example.com"
+                      placeholder="patron@example.in"
                       value={contactData.email}
                       onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
                       className="form-input"
@@ -246,7 +246,7 @@ export default function ContactFaqPage({ onNavigate }) {
                     <label>Order Number (If Applicable)</label>
                     <input
                       type="text"
-                      placeholder="e.g. AP-89241"
+                      placeholder="e.g. AP-IN-892410"
                       value={contactData.orderNumber}
                       onChange={(e) => setContactData({ ...contactData, orderNumber: e.target.value })}
                       className="form-input"

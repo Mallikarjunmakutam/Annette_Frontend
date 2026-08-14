@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function AnnouncementBar() {
   const announcements = [
-    "Free Shipping on U.S. Orders $150+",
-    "100% Happiness Guaranteed - Clean Burn Experience",
-    "Up to 50% Off Every 10 Purchases - Exclusive Scent Vault Access",
-    "Handcrafted Premium Soy Candles from Laguna Beach"
+    "Complimentary Express Delivery Across India on Orders ₹1,499+",
+    "100% Non-Toxic Promise — Pure Organic Soy Wax & Lead-Free Wicks",
+    "Special Offer: Discovery Scent Flight Includes ₹500 Full-Size Candle Voucher",
+    "Handcrafted in Small Batches • India Flagship Atelier"
   ];
 
   return (

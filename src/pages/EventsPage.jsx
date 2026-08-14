@@ -15,9 +15,9 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
     eventType: 'Corporate Team Workshop',
     guestCount: '10 - 25 Guests',
     date: '',
-    location: 'Laguna Beach Flagship Atelier',
+    location: 'Mumbai Flagship Atelier',
     customLids: true,
-    budget: '$1,500 - $3,000',
+    budget: '₹50,000 - ₹1,50,000',
     notes: ''
   });
 
@@ -69,7 +69,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
             <ul className="event-perks-list">
               <li>&bull; Each guest pours a custom 11 oz soy candle</li>
               <li>&bull; Custom company branded labels & lids</li>
-              <li>&bull; Hosted at our Laguna atelier or on-site at your venue</li>
+              <li>&bull; Hosted at our Mumbai/Bengaluru atelier or on-site at your venue</li>
             </ul>
           </div>
 
@@ -81,11 +81,11 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
             <span className="event-card-tag">VIP & Client Appreciation</span>
             <h3 className="event-card-title">Corporate Gifting Concierge</h3>
             <p className="event-card-desc">
-              Elevate executive gifting with bespoke candles featuring custom laser-engraved brass lids, handwritten wax-sealed notes, and multi-address fulfillment.
+              Elevate executive gifting with bespoke candles featuring custom laser-engraved brass lids, handwritten wax-sealed notes, and multi-address Pan-India fulfillment.
             </p>
             <ul className="event-perks-list">
               <li>&bull; Volume tiered pricing (25 to 5,000+ units)</li>
-              <li>&bull; White-glove direct doorstep shipping</li>
+              <li>&bull; White-glove direct doorstep shipping across India</li>
               <li>&bull; Dedicated gifting concierge project manager</li>
             </ul>
           </div>
@@ -98,12 +98,12 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
             <span className="event-card-tag">Celebrations & Gatherings</span>
             <h3 className="event-card-title">Private Celebrations & Bridal</h3>
             <p className="event-card-desc">
-              Create unforgettable memories for bridal showers, milestone birthdays, and private dinner parties with custom candle-making and wine pairings.
+              Create unforgettable memories for bridal celebrations, milestone birthdays, and private dinner parties with custom candle-making and sensory pairing.
             </p>
             <ul className="event-perks-list">
               <li>&bull; Intimate private atelier buyout options</li>
               <li>&bull; Custom scent naming for wedding favors</li>
-              <li>&bull; Complimentary champagne toast included</li>
+              <li>&bull; Complimentary welcome toast included</li>
             </ul>
           </div>
 
@@ -114,7 +114,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
       <section className="events-highlight-strip">
         <div className="events-highlight-container">
           <div className="events-highlight-img">
-            <img src={boutiqueImg} alt="Workshop table in Laguna Beach" />
+            <img src={boutiqueImg} alt="Workshop table in experiential atelier" />
           </div>
           <div className="events-highlight-text">
             <span className="section-eyebrow">What's Included</span>
@@ -172,7 +172,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Marcus Sterling"
+                    placeholder="e.g. Event Coordinator"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="form-input"
@@ -182,7 +182,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                   <label>Company / Organization (Optional)</label>
                   <input
                     type="text"
-                    placeholder="e.g. Sterling Ventures"
+                    placeholder="e.g. Enterprise / Private Host"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="form-input"
@@ -196,7 +196,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                   <input
                     type="email"
                     required
-                    placeholder="marcus@example.com"
+                    placeholder="events@company.in"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="form-input"
@@ -206,7 +206,7 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                   <label>Phone Number</label>
                   <input
                     type="tel"
-                    placeholder="(949) 555-0182"
+                    placeholder="+91 98200 12345"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="form-input"
@@ -262,8 +262,9 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     className="form-select"
                   >
-                    <option value="Laguna Beach Flagship Atelier">Laguna Beach Flagship Atelier</option>
-                    <option value="Client Venue / Office (Southern CA)">Client Venue / Office (We Travel to You)</option>
+                    <option value="Mumbai Flagship Atelier (Altamount Road)">Mumbai Flagship Atelier (Altamount Road)</option>
+                    <option value="Bengaluru Experiential Studio (Indiranagar)">Bengaluru Experiential Studio (Indiranagar)</option>
+                    <option value="Client Venue / Office (Pan-India Travel)">Client Venue / Office (Pan-India Travel)</option>
                     <option value="Virtual Workshop with Shipped Kits">Virtual Workshop with Shipped DIY Kits</option>
                   </select>
                 </div>
@@ -275,9 +276,9 @@ export default function EventsPage({ initialTab = 'corporate', onNavigate }) {
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="form-select"
                   >
-                    <option value="$1,000 - $2,500">$1,000 &mdash; $2,500</option>
-                    <option value="$2,500 - $5,000">$2,500 &mdash; $5,000</option>
-                    <option value="$5,000+">$5,000+ (Custom Luxury Program)</option>
+                    <option value="₹25,000 - ₹75,000">₹25,000 &mdash; ₹75,000</option>
+                    <option value="₹75,000 - ₹2,00,000">₹75,000 &mdash; ₹2,00,000</option>
+                    <option value="₹2,00,000+">₹2,00,000+ (Custom Luxury Program)</option>
                   </select>
                 </div>
               </div>

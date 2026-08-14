@@ -42,7 +42,7 @@ function App() {
       {
         id: 1,
         title: "Forest Ave.",
-        price: 38.00,
+        price: PRODUCTS[0].price,
         image: PRODUCTS[0].image,
         quantity: 1
       }

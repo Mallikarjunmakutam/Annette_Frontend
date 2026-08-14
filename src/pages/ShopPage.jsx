@@ -16,7 +16,7 @@ export default function ShopPage({
   const [sortBy, setSortBy] = useState('featured');
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery || '');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
-  const [priceFilter, setPriceFilter] = useState('all'); // 'all', 'under35', '35to45', 'over45'
+  const [priceFilter, setPriceFilter] = useState('all'); // 'all', 'under1400', '1400to1800', 'over1800'
 
   // Filter & Sort logic
   const filteredProducts = useMemo(() => {
@@ -36,9 +36,9 @@ export default function ShopPage({
       }
 
       // Price filter
-      if (priceFilter === 'under35' && product.price >= 35) return false;
-      if (priceFilter === '35to45' && (product.price < 35 || product.price > 45)) return false;
-      if (priceFilter === 'over45' && product.price <= 45) return false;
+      if (priceFilter === 'under1400' && product.price >= 1400) return false;
+      if (priceFilter === '1400to1800' && (product.price < 1400 || product.price > 1800)) return false;
+      if (priceFilter === 'over1800' && product.price <= 1800) return false;
 
       // Search Query filter
       if (searchQuery.trim()) {
@@ -85,7 +85,7 @@ export default function ShopPage({
           <span className="shop-banner-eyebrow">The Complete Collection</span>
           <h1 className="shop-banner-title">Hand-Poured Soy Candles</h1>
           <p className="shop-banner-tagline">
-            Organic soy wax, unbleached cotton wicks, and clean botanical essences. Crafted in small batches in Laguna Beach.
+            100% organic soy wax, unbleached cotton wicks, and pure botanical essences. Handcrafted in small batches in India.
           </p>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function ShopPage({
           {/* Sidebar Filter Panel */}
           <aside className="shop-sidebar">
             <div className="sidebar-header">
-              <h3 className="sidebar-title">Filter Scents</h3>
+              <h3 className="sidebar-title">Filters</h3>
               {hasActiveFilters && (
                 <button className="sidebar-reset-btn" onClick={clearAllFilters}>
                   Clear All
@@ -167,7 +167,7 @@ export default function ShopPage({
 
             {/* Category Filter */}
             <div className="filter-group">
-              <h4 className="filter-group-title">Collection</h4>
+              <h4 className="filter-group-title">Collections</h4>
               <ul className="filter-options-list">
                 {CATEGORIES.map((cat) => (
                   <li key={cat}>
@@ -185,7 +185,7 @@ export default function ShopPage({
 
             {/* Scent Family Filter */}
             <div className="filter-group">
-              <h4 className="filter-group-title">Fragrance Profile</h4>
+              <h4 className="filter-group-title">Fragrance Family</h4>
               <ul className="filter-options-list">
                 {SCENT_FAMILIES.map((scent) => (
                   <li key={scent}>
@@ -216,29 +216,29 @@ export default function ShopPage({
                 </li>
                 <li>
                   <button 
-                    className={`filter-option-btn ${priceFilter === 'under35' ? 'active' : ''}`}
-                    onClick={() => setPriceFilter('under35')}
+                    className={`filter-option-btn ${priceFilter === 'under1400' ? 'active' : ''}`}
+                    onClick={() => setPriceFilter('under1400')}
                   >
-                    <span>Under $35.00</span>
-                    {priceFilter === 'under35' && <Check size={14} />}
+                    <span>Under ₹1,400</span>
+                    {priceFilter === 'under1400' && <Check size={14} />}
                   </button>
                 </li>
                 <li>
                   <button 
-                    className={`filter-option-btn ${priceFilter === '35to45' ? 'active' : ''}`}
-                    onClick={() => setPriceFilter('35to45')}
+                    className={`filter-option-btn ${priceFilter === '1400to1800' ? 'active' : ''}`}
+                    onClick={() => setPriceFilter('1400to1800')}
                   >
-                    <span>$35.00 &mdash; $45.00</span>
-                    {priceFilter === '35to45' && <Check size={14} />}
+                    <span>₹1,400 &mdash; ₹1,800</span>
+                    {priceFilter === '1400to1800' && <Check size={14} />}
                   </button>
                 </li>
                 <li>
                   <button 
-                    className={`filter-option-btn ${priceFilter === 'over45' ? 'active' : ''}`}
-                    onClick={() => setPriceFilter('over45')}
+                    className={`filter-option-btn ${priceFilter === 'over1800' ? 'active' : ''}`}
+                    onClick={() => setPriceFilter('over1800')}
                   >
-                    <span>$45.00+ (Luxury & Vessels)</span>
-                    {priceFilter === 'over45' && <Check size={14} />}
+                    <span>₹1,800+ (Luxury & Collector)</span>
+                    {priceFilter === 'over1800' && <Check size={14} />}
                   </button>
                 </li>
               </ul>
@@ -248,7 +248,7 @@ export default function ShopPage({
             <div className="sidebar-promo-card">
               <span className="sidebar-promo-badge">Try First</span>
               <h4 className="sidebar-promo-title">Discovery Scent Flight</h4>
-              <p className="sidebar-promo-text">Sample 4 luxury scents at home for $28 and receive a $20 credit voucher towards your full-size candle.</p>
+              <p className="sidebar-promo-text">Sample 4 luxury scents at home for ₹899 and receive a ₹500 credit voucher towards your full-size candle.</p>
               <button 
                 className="btn-luxe btn-solid sidebar-promo-btn"
                 onClick={() => onNavigate && onNavigate('samples')}
@@ -372,9 +372,9 @@ export default function ShopPage({
                         <p className="product-card-tagline">{product.tagline}</p>
 
                         <div className="product-price-row">
-                          <span className="product-price">${product.price.toFixed(2)}</span>
+                          <span className="product-price">₹{product.price.toLocaleString('en-IN')}</span>
                           {product.comparePrice && (
-                            <span className="product-price-compare">${product.comparePrice.toFixed(2)}</span>
+                            <span className="product-price-compare">₹{product.comparePrice.toLocaleString('en-IN')}</span>
                           )}
                         </div>
 
@@ -390,13 +390,13 @@ export default function ShopPage({
                               className="btn-luxe btn-solid"
                               onClick={() => onAddToCart(product, 1)}
                             >
-                              Add to Bag &bull; ${product.price.toFixed(2)}
+                              Add to Bag &bull; ₹{product.price.toLocaleString('en-IN')}
                             </button>
                             <button 
                               className="btn-luxe"
                               onClick={() => handleProductClick(product)}
                             >
-                              View Details
+                              Full Scent Profile &rarr;
                             </button>
                           </div>
                         )}

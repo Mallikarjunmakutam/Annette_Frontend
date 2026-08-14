@@ -144,7 +144,7 @@ export default function ProductDetailPage({
           <div className="pdp-perks-box">
             <div className="pdp-perk">
               <Truck size={16} />
-              <span>Complimentary U.S. Shipping on Orders $150+</span>
+              <span>Complimentary Pan-India Shipping on Orders ₹1,499+</span>
             </div>
             <div className="pdp-perk">
               <ShieldCheck size={16} />
@@ -152,7 +152,7 @@ export default function ProductDetailPage({
             </div>
             <div className="pdp-perk">
               <RefreshCw size={16} />
-              <span>30-Day Happiness Guarantee & Free Returns</span>
+              <span>Happiness Guarantee & Complimentary Exchanges</span>
             </div>
           </div>
         </div>
@@ -177,9 +177,9 @@ export default function ProductDetailPage({
 
           {/* Pricing */}
           <div className="pdp-price-row">
-            <span className="pdp-price">${discountPrice.toFixed(2)}</span>
+            <span className="pdp-price">₹{discountPrice.toLocaleString('en-IN')}</span>
             {currentProduct.comparePrice && purchaseType === 'onetime' && (
-              <span className="pdp-compare-price">${currentProduct.comparePrice.toFixed(2)}</span>
+              <span className="pdp-compare-price">₹{currentProduct.comparePrice.toLocaleString('en-IN')}</span>
             )}
             {purchaseType === 'subscription' && (
               <span className="pdp-sub-savings-badge">Save 10% with Auto-Delivery</span>
@@ -232,7 +232,7 @@ export default function ProductDetailPage({
                 <span>Single hand-poured vessel</span>
               </div>
               <div className="purchase-card-price">
-                ${currentProduct.price.toFixed(2)}
+                ₹{currentProduct.price.toLocaleString('en-IN')}
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export default function ProductDetailPage({
                 )}
               </div>
               <div className="purchase-card-price">
-                ${(currentProduct.price * 0.9).toFixed(2)}
+                ₹{Math.round(currentProduct.price * 0.9).toLocaleString('en-IN')}
               </div>
             </div>
 
@@ -298,7 +298,7 @@ export default function ProductDetailPage({
               onClick={handleAddToCart}
             >
               <ShoppingBag size={18} />
-              <span>Add to Scent Bag &bull; ${(discountPrice * quantity).toFixed(2)}</span>
+              <span>Add to Scent Bag &bull; ₹{Math.round(discountPrice * quantity).toLocaleString('en-IN')}</span>
             </button>
           </div>
 
@@ -342,7 +342,7 @@ export default function ProductDetailPage({
             </div>
             <div className="spec-item">
               <span className="spec-label">Origin</span>
-              <span className="spec-value">Hand-Poured in Laguna Beach, CA</span>
+              <span className="spec-value">Hand-Poured in India Atelier</span>
             </div>
           </div>
 
@@ -422,8 +422,8 @@ export default function ProductDetailPage({
               </button>
               {activeAccordion === 'shipping' && (
                 <div className="accordion-body-content">
-                  <p><strong>U.S. Shipping:</strong> Complimentary standard shipping on all orders $150+. Standard shipping ($6.95) arrives in 3-5 business days.</p>
-                  <p><strong>30-Day Happiness Guarantee:</strong> If a scent doesn't resonate with you, return it within 30 days for a complimentary exchange or full refund.</p>
+                  <p><strong>Pan-India Shipping:</strong> Complimentary express shipping on all orders ₹1,499+. Standard shipping (₹99) arrives in 2-4 business days via Blue Dart / Delhivery.</p>
+                  <p><strong>Happiness Guarantee:</strong> If a scent doesn't resonate with you, contact our concierge within 30 days for a complimentary exchange or full refund.</p>
                 </div>
               )}
             </div>
@@ -545,7 +545,7 @@ export default function ProductDetailPage({
               <div className="product-info">
                 <span className="product-collection-label">{p.category}</span>
                 <h3 className="product-title">{p.title}</h3>
-                <span className="product-price">${p.price.toFixed(2)}</span>
+                <span className="product-price">₹{p.price.toLocaleString('en-IN')}</span>
               </div>
             </div>
           ))}
@@ -579,11 +579,11 @@ export default function ProductDetailPage({
               </div>
 
               <div className="form-group">
-                <label>Your Name</label>
+                <label>Patron Title & Location</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Eleanor Vance"
+                  placeholder="e.g. Verified Patron • Mumbai"
                   value={newReviewAuthor}
                   onChange={(e) => setNewReviewAuthor(e.target.value)}
                   className="form-input"

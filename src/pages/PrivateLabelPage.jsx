@@ -38,7 +38,7 @@ export default function PrivateLabelPage({ onNavigate }) {
           <span className="pl-eyebrow">Bespoke Olfactory Branding & Manufacturing</span>
           <h1 className="pl-title">Your Scent. Your Vessel. Your Brand.</h1>
           <p className="pl-tagline">
-            Partner with master chandlers in Laguna Beach to formulate signature fragrances and luxury custom candles for hotels, boutiques, luxury real estate, and corporate gifting.
+            Partner with our master chandler atelier in India to formulate signature fragrances and luxury custom candles for hotels, boutiques, luxury real estate, and corporate gifting.
           </p>
           <a href="#inquiry-form" className="btn-luxury-cta">
             Start Your Custom Project &rarr;
@@ -50,7 +50,7 @@ export default function PrivateLabelPage({ onNavigate }) {
       <div className="pl-metrics-strip">
         <div className="pl-metric-item">
           <Award size={24} className="pl-metric-icon" />
-          <span className="pl-metric-number">22+</span>
+          <span className="pl-metric-number">20+</span>
           <span className="pl-metric-label">Years of Master Formulating</span>
         </div>
         <div className="pl-metric-item">
@@ -96,7 +96,7 @@ export default function PrivateLabelPage({ onNavigate }) {
             <span className="step-num">02</span>
             <h3 className="step-title">Vessel Curation & Custom Screen Printing</h3>
             <p className="step-desc">
-              Choose from our curated collection of Italian glassware, matte ceramic tumblers, and brass vessels, customized with gold foil embossing or ceramic screen printing.
+              Choose from our curated collection of glassware, matte ceramic tumblers, and brass vessels, customized with gold foil embossing or ceramic screen printing.
             </p>
             <ul className="step-features">
               <li>&bull; Custom Pantone vessel color matching</li>
@@ -112,7 +112,7 @@ export default function PrivateLabelPage({ onNavigate }) {
               Every custom candle formula undergoes rigorous safety and melt pool testing in our burn laboratory to ensure a clean, smokeless burn and optimal cold/hot scent throw.
             </p>
             <ul className="step-features">
-              <li>&bull; 100% American organic soy wax</li>
+              <li>&bull; 100% natural organic soy wax</li>
               <li>&bull; Custom wick sizing per vessel diameter</li>
               <li>&bull; 60+ hour burn efficiency test</li>
             </ul>
@@ -120,14 +120,14 @@ export default function PrivateLabelPage({ onNavigate }) {
 
           <div className="pl-step-card">
             <span className="step-num">04</span>
-            <h3 className="step-title">Hand-Poured Production & Global Delivery</h3>
+            <h3 className="step-title">Hand-Poured Production & Pan-India Delivery</h3>
             <p className="step-desc">
-              Once approved, our team hand-pours, hand-wicks, and hand-labels your production run in Laguna Beach with full quality control and white-glove palletized freight.
+              Once approved, our team hand-pours, hand-wicks, and hand-labels your production run in our atelier with full quality control and white-glove palletized freight.
             </p>
             <ul className="step-features">
               <li>&bull; Hand-poured in micro-batches</li>
               <li>&bull; 14-day natural cure cycle</li>
-              <li>&bull; Domestic & international drop-shipping</li>
+              <li>&bull; Pan-India & international freight</li>
             </ul>
           </div>
 
@@ -142,7 +142,7 @@ export default function PrivateLabelPage({ onNavigate }) {
             <span className="section-eyebrow">Start Your Collaboration</span>
             <h2 className="section-title">Request a Private Label Consultation & Sample Kit</h2>
             <p className="pl-form-subtext">
-              Tell us about your brand vision. Our master perfumer will prepare a bespoke proposal and scent discovery kit tailored to your aesthetic.
+              Tell us about your brand vision. Our master olfactory team will prepare a bespoke proposal and scent discovery kit tailored to your aesthetic.
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                 <Check size={36} />
               </div>
               <h3>Thank You, {formData.contactName || 'Valued Partner'}!</h3>
-              <p>Your private label inquiry for <strong>{formData.brandName || 'your brand'}</strong> has been received by Annette and our Laguna atelier team.</p>
+              <p>Your private label inquiry for <strong>{formData.brandName || 'your brand'}</strong> has been received by our master atelier team.</p>
               <p>We will review your project specs ({formData.quantity}, {formData.vesselType}) and contact you within 24 business hours with your sample proposal.</p>
               <button 
                 className="btn-luxury-cta"
@@ -170,18 +170,18 @@ export default function PrivateLabelPage({ onNavigate }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. The Coastal Hotel Group"
+                    placeholder="e.g. Luxury Hospitality Group"
                     value={formData.brandName}
                     onChange={(e) => setFormData({ ...formData, brandName: e.target.value })}
                     className="form-input"
                   />
                 </div>
                 <div className="form-group">
-                  <label>Contact Name *</label>
+                  <label>Contact Designation / Name *</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Sophia Montgomery"
+                    placeholder="e.g. Design Director"
                     value={formData.contactName}
                     onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
                     className="form-input"
@@ -195,7 +195,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                   <input
                     type="email"
                     required
-                    placeholder="sophia@coastalhotels.com"
+                    placeholder="partner@luxuryhotel.in"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="form-input"
@@ -205,7 +205,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                   <label>Phone Number</label>
                   <input
                     type="tel"
-                    placeholder="(555) 019-2834"
+                    placeholder="+91 98200 12345"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="form-input"
@@ -252,7 +252,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                   >
                     <option value="Rush (3-4 weeks)">Rush (3-4 Weeks)</option>
                     <option value="Within 2-3 Months">Within 2-3 Months</option>
-                    <option value="Holiday Season 2026">Holiday Season 2026</option>
+                    <option value="Festive Season 2026">Festive Season 2026</option>
                     <option value="Exploratory / Budgeting">Exploratory Planning</option>
                   </select>
                 </div>
@@ -268,7 +268,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                   >
                     <option value="Woody & Warm Amber">Woody & Warm Amber (Cedar, Sandalwood, Vetiver)</option>
                     <option value="Coastal & Oceanic Fresh">Coastal & Oceanic Fresh (Sea Salt, Sage, Citrus)</option>
-                    <option value="Calming Botanical Floral">Calming Botanical (Lavender, Chamomile, White Tea)</option>
+                    <option value="Calming Botanical Floral">Calming Botanical (Jasmine, Kashmiri Lavender, White Tea)</option>
                     <option value="Smoky Luxury Leather">Smoky Luxury (Tobacco Leaf, Bourbon, Vanilla)</option>
                     <option value="Custom Scent Compounding">Custom Scent Matching (Formulate from scratch)</option>
                   </select>
@@ -284,7 +284,7 @@ export default function PrivateLabelPage({ onNavigate }) {
                     <option value="Matte Amber Heavy Glass">Matte Amber Heavy Glass Tumbler</option>
                     <option value="Bisque White Ceramic">Handcrafted Bisque White Ceramic with Cork</option>
                     <option value="Frosted Black Matte Glass">Frosted Black Matte Glass with Wooden Lid</option>
-                    <option value="Hand-Blown Murano Vessel">Hand-Blown Luxury Murano Glass</option>
+                    <option value="Hand-Blown Luxury Vessel">Hand-Blown Luxury Collector Glass</option>
                     <option value="Client Supplied Vessels">Client Will Supply Own Vessels</option>
                   </select>
                 </div>
@@ -321,34 +321,34 @@ export default function PrivateLabelPage({ onNavigate }) {
 
         <div className="portfolio-cards-grid">
           <div className="portfolio-card">
-            <img src={foundersImg} alt="The Montage Spa custom candle" className="portfolio-img" />
+            <img src={foundersImg} alt="The Luxury Resort custom candle" className="portfolio-img" />
             <div className="portfolio-content">
               <span className="portfolio-tag">Luxury Hospitality</span>
-              <h3 className="portfolio-title">Montage Ocean Resort & Spa</h3>
+              <h3 className="portfolio-title">The Heritage Palace & Spa</h3>
               <p className="portfolio-desc">
-                Custom coastal sage, sea pine, and eucalyptus bespoke candle poured for guest suites and boutique retail.
+                Custom Mysore sandalwood, wild jasmine, and mountain cedarwood bespoke candle poured for royal guest suites and luxury spa boutiques.
               </p>
             </div>
           </div>
 
           <div className="portfolio-card">
-            <img src={boutiqueImg} alt="Maison Noir boutique candle" className="portfolio-img" />
+            <img src={boutiqueImg} alt="Atelier VIP bespoke candle" className="portfolio-img" />
             <div className="portfolio-content">
               <span className="portfolio-tag">Haute Horlogerie / VIP</span>
-              <h3 className="portfolio-title">Atelier V. Geneva</h3>
+              <h3 className="portfolio-title">Atelier V. Luxury</h3>
               <p className="portfolio-desc">
-                Smoked amber, dark bourbon vanilla, and aged cedarwood candle in solid cast brass vessels for annual VIP gala.
+                Smoked amber, dark bourbon vanilla, and aged cedarwood candle in solid cast brass vessels for annual VIP patron galas.
               </p>
             </div>
           </div>
 
           <div className="portfolio-card">
-            <img src={privateLabelImg} alt="Serena Wellness Studio candle" className="portfolio-img" />
+            <img src={privateLabelImg} alt="Wellness Sanctuary candle" className="portfolio-img" />
             <div className="portfolio-content">
               <span className="portfolio-tag">Wellness Sanctuary</span>
-              <h3 className="portfolio-title">Serena Healing Sanctuaries</h3>
+              <h3 className="portfolio-title">Ayur & Sound Sanctuaries</h3>
               <p className="portfolio-desc">
-                Restorative French lavender and coconut cream organic soy candles in handmade bisque ceramic vessels.
+                Restorative Kashmiri lavender and coconut cream organic soy candles in handmade bisque ceramic vessels.
               </p>
             </div>
           </div>

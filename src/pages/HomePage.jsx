@@ -8,7 +8,6 @@ import FeatureBlocks from '../components/FeatureBlocks';
 import PromoSections from '../components/PromoSections';
 import BrandStories from '../components/BrandStories';
 import Testimonials from '../components/Testimonials';
-import BrandVideo from '../components/BrandVideo';
 import MilestoneBanner from '../components/MilestoneBanner';
 import SupportStrip from '../components/SupportStrip';
 
@@ -27,10 +26,10 @@ export default function HomePage({
       >
         <div className="hero-overlay" />
         <div className="hero-content">
-          <span className="hero-eyebrow">Handcrafted in Laguna Beach &bull; 100% Organic Soy</span>
+          <span className="hero-eyebrow">Handcrafted in India Atelier &bull; 100% Organic Soy</span>
           <h1 className="hero-title">Annette Pure</h1>
           <p className="hero-tagline">
-            Elegance translated through scent. Hand-poured botanical candles poured with intention.
+            Elegance translated through pure botanical scent. Hand-poured candles crafted with intention.
           </p>
           <div className="hero-cta-group">
             <button 
@@ -76,9 +75,6 @@ export default function HomePage({
 
       {/* 15. Customer reviews carousel (7 cards) */}
       <Testimonials />
-
-      {/* 8. Brand video and mission statement block */}
-      <BrandVideo onNavigate={onNavigate} />
 
       {/* 16. Anniversary milestone banner (stacked split columns) */}
       <MilestoneBanner onNavigate={onNavigate} />

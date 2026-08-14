@@ -7,21 +7,21 @@ export default function CategoryGrid({ onNavigate }) {
   const categories = [
     {
       name: "Wellness Collection",
-      tagline: "Calming lavender, coconut & restorative botanicals",
+      tagline: "Calming Kashmiri lavender, coconut & restorative botanicals",
       image: wellnessImg,
       page: "shop",
       category: "Wellness"
     },
     {
-      name: "Founder's Collection",
-      tagline: "Aged cedarwood, smoked amber & coastal pine",
+      name: "Signature Atelier Reserve",
+      tagline: "Himalayan cedarwood, smoked amber & Mysore sandalwood",
       image: foundersImg,
       page: "shop",
-      category: "Founder's"
+      category: "Signature Atelier"
     },
     {
-      name: "Laguna Boutique Reserve",
-      tagline: "Hand-blown vessels, ocean mist & rare citrus",
+      name: "Boutique Luxury Reserve",
+      tagline: "Hand-blown vessels, ocean mist & night-blooming jasmine",
       image: boutiqueImg,
       page: "shop",
       category: "Luxury"

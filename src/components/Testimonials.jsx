@@ -6,39 +6,39 @@ export default function Testimonials() {
 
   const reviews = [
     {
-      name: "Anick L.",
+      name: "Verified Patron • South Mumbai",
       stars: 5,
-      quote: "Absolutely in love with Forest Ave. It fills my large living room with a rich woodsy scent without being overwhelming. Best soy candle I've ever owned."
+      quote: "Forest Ave. fills my large living room with a rich Himalayan woodsy scent without being overwhelming. Best soy candle I've ever owned in India."
     },
     {
-      name: "Clarissa M.",
+      name: "Aromatherapy Collector • Bengaluru",
       stars: 5,
-      quote: "The Wellness Collection is a staple in my bedtime ritual. Purity and calm in a beautiful frosted glass jar. I purchase monthly without fail."
+      quote: "The Wellness Collection is a staple in my bedtime ritual. Purity and calm in a beautiful frosted ceramic jar. I reorder monthly without fail."
     },
     {
-      name: "Marcus T.",
+      name: "Luxury Hospitality Director • Goa",
       stars: 5,
-      quote: "Ordered custom corporate gifts through their Private Label workshop. The client feedback was incredible. Incredible quality and packaging."
+      quote: "Ordered custom bespoke gifts through their Private Label atelier. The client feedback was extraordinary. Exceptional quality, natural wax, and packaging."
     },
     {
-      name: "Sarah K.",
+      name: "Verified Buyer • New Delhi",
       stars: 5,
-      quote: "Cleanest burning candle ever. I have sensitive allergies, and ANNETTE PURE candles never trigger them. I'm customer for life!"
+      quote: "Cleanest burning candle ever. I have sensitive allergies, and ANNETTE PURE candles never trigger them. Pure botanical essential oils make all the difference."
     },
     {
-      name: "Daniel G.",
+      name: "Interior Stylist • Hyderabad",
       stars: 5,
-      quote: "Layne is the most perfect spring fragrance. The scent smells incredibly natural, not synthetic like cheaper mall brands."
+      quote: "Layne is the most uplifting coastal fragrance. The jasmine and white tea notes smell incredibly natural, never synthetic."
     },
     {
-      name: "Helena R.",
+      name: "Verified Collector • Pune",
       stars: 5,
-      quote: "Stunning aesthetics! The amber jars look beautiful on my bookshelves. And the scent lingers in the room long after blowing it out."
+      quote: "Stunning aesthetics! The amber jars look beautiful on my bookshelves, and the scent lingers gently in the room long after extinguishing."
     },
     {
-      name: "Elena V.",
+      name: "Verified Patron • Chennai",
       stars: 5,
-      quote: "Incredible craftsmanship. The wooden accents and natural soy wicks show their attention to detail. Worth every penny."
+      quote: "Incredible craftsmanship. The wooden accents and natural soy wicks show their attention to detail. Worth every single rupee."
     }
   ];
 

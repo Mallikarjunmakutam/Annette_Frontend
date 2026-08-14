@@ -1,4 +1,4 @@
-// Comprehensive product dataset for ANNETTE PURE Luxury Fragrance Maison
+// Comprehensive product dataset for ANNETTE PURE Luxury Fragrance Maison - India Atelier
 import wellnessImg from '../assets/wellness_collection.png';
 import foundersImg from '../assets/founders_collection.png';
 import boutiqueImg from '../assets/boutique_collection.png';
@@ -11,10 +11,10 @@ export const PRODUCTS = [
     id: 1,
     title: "Forest Ave.",
     slug: "forest-ave",
-    category: "Founder's",
-    collection: "Founder's Collection",
-    price: 38.00,
-    comparePrice: 48.00,
+    category: "Signature Atelier",
+    collection: "Signature Atelier Reserve",
+    price: 1499.00,
+    comparePrice: 1899.00,
     rating: 5.0,
     reviewCount: 42,
     image: foundersImg,
@@ -28,11 +28,11 @@ export const PRODUCTS = [
     wick: "Lead-Free Braided Cotton Wick",
     netWeight: "11 oz / 312g",
     vessel: "Hand-Blown Matte Amber Glass with Heavy Base",
-    tagline: "A walk through sun-dappled coastal redwoods and pine.",
-    description: "Step into a lush woodland sanctuary with notes of aged cedarwood, damp pine needles, and a whisper of wild eucalyptus. Poured with intention in small batches, Forest Ave. is our signature tribute to the tranquil, grounding majesty of nature.",
+    tagline: "A walk through sun-dappled Himalayan cedarwood and Nilgiri pine.",
+    description: "Step into a lush woodland sanctuary with notes of aged Himalayan cedarwood, damp pine needles, and a whisper of wild Nilgiri eucalyptus. Poured with intention in small batches in our Indian atelier, Forest Ave. is our signature tribute to the tranquil majesty of pure botanical nature.",
     scentPyramid: {
-      top: ["Wild Eucalyptus", "Crushed Pine Needles", "Bergamot Zest"],
-      heart: ["Coastal Cedarwood", "Smoked Vetiver", "Juniper Berry"],
+      top: ["Wild Nilgiri Eucalyptus", "Crushed Pine Needles", "Bergamot Zest"],
+      heart: ["Himalayan Cedarwood", "Smoked Vetiver", "Juniper Berry"],
       base: ["Amber Resin", "Golden Patchouli", "Oakmoss"]
     },
     specs: {
@@ -41,9 +41,9 @@ export const PRODUCTS = [
       roomPlacement: "Living Room, Study, Bedroom"
     },
     reviews: [
-      { id: 101, author: "Victoria M.", rating: 5, date: "3 days ago", verified: true, title: "The most authentic forest scent ever created", comment: "I am extremely picky about candles, but Forest Ave. is sheer perfection. No synthetic headache—just pure, grounding botanical luxury. It burns so evenly!" },
-      { id: 102, author: "Harrison K.", rating: 5, date: "1 week ago", verified: true, title: "Sophisticated and long lasting", comment: "The hot throw fills my entire two-story loft within twenty minutes. The matte amber vessel looks gorgeous on my marble coffee table." },
-      { id: 103, author: "Elena S.", rating: 5, date: "2 weeks ago", verified: true, title: "A true staple in our home", comment: "Bought this after smelling it at the Laguna boutique. We always have a backup on hand now." }
+      { id: 101, author: "Verified Patron • Mumbai", rating: 5, date: "3 days ago", verified: true, title: "The most authentic forest scent ever created", comment: "Forest Ave. is sheer perfection. No synthetic headache—just pure, grounding botanical luxury. It burns so evenly throughout my living room!" },
+      { id: 102, author: "Verified Collector • Bengaluru", rating: 5, date: "1 week ago", verified: true, title: "Sophisticated and long lasting", comment: "The hot throw fills my entire apartment within twenty minutes. The matte amber vessel looks gorgeous on my marble coffee table." },
+      { id: 103, author: "Interior Stylist • New Delhi", rating: 5, date: "2 weeks ago", verified: true, title: "A true staple in our home", comment: "Bought this after experiencing the fragrance at the atelier. We always have a backup on hand now." }
     ]
   },
   {
@@ -51,8 +51,8 @@ export const PRODUCTS = [
     title: "Perloat",
     slug: "perloat",
     category: "Wellness",
-    collection: "Wellness Collection",
-    price: 34.00,
+    collection: "Wellness & Calm",
+    price: 1349.00,
     comparePrice: null,
     rating: 4.8,
     reviewCount: 38,
@@ -67,12 +67,12 @@ export const PRODUCTS = [
     wick: "Pure Cotton Double Wick",
     netWeight: "10 oz / 283g",
     vessel: "Bisque Ceramic Vessel with Cork Lid",
-    tagline: "Serene French lavender infused with creamy coconut milk.",
-    description: "A calming sanctuary in a vessel. Perloat weaves together authentic French lavender buds, soothing chamomile flowers, and warm coconut milk to guide your mind into deep restorative tranquility.",
+    tagline: "Serene Kashmiri lavender infused with creamy coconut milk.",
+    description: "A calming sanctuary in a vessel. Perloat weaves together authentic Kashmiri lavender buds, soothing chamomile flowers, and warm coconut milk to guide your mind into deep restorative tranquility.",
     scentPyramid: {
-      top: ["French Lavender Blossom", "White Chamomile", "Lemon Balm"],
+      top: ["Kashmir Lavender Blossom", "White Chamomile", "Lemon Balm"],
       heart: ["Coconut Milk", "Clary Sage", "Sweet Vanilla Orchid"],
-      base: ["White Amber", "Cashmere Musk", "Sandalwood"]
+      base: ["White Amber", "Cashmere Musk", "Mysore Sandalwood"]
     },
     specs: {
       intensity: "Medium",
@@ -80,7 +80,7 @@ export const PRODUCTS = [
       roomPlacement: "Master Bedroom, Bath, Reading Nook"
     },
     reviews: [
-      { id: 104, author: "Camille D.", rating: 5, date: "5 days ago", verified: true, title: "My nightly wind-down essential", comment: "Lighting Perloat is my favorite evening ritual. The lavender is so soft and natural, balanced by the gentle coconut cream." }
+      { id: 104, author: "Aromatherapy Connoisseur • Pune", rating: 5, date: "5 days ago", verified: true, title: "My nightly wind-down essential", comment: "Lighting Perloat is my favorite evening ritual. The lavender is so soft and natural, balanced by the gentle coconut cream." }
     ]
   },
   {
@@ -88,9 +88,9 @@ export const PRODUCTS = [
     title: "Heritage",
     slug: "heritage",
     category: "Luxury",
-    collection: "Founder's Collection",
-    price: 42.00,
-    comparePrice: 50.00,
+    collection: "Signature Atelier Reserve",
+    price: 1699.00,
+    comparePrice: 1999.00,
     rating: 4.9,
     reviewCount: 51,
     image: boutiqueImg,
@@ -105,7 +105,7 @@ export const PRODUCTS = [
     netWeight: "12 oz / 340g",
     vessel: "Smoked Glass Jar with Brass Engraved Lid",
     tagline: "Spiced amber, toasted Madagascar vanilla, and aged pipe tobacco.",
-    description: "Honoring 22 years of candle mastery, Heritage is a bold and comforting composition of rare amber resin, smoky bourbon vanilla, and cured tobacco leaves. A rich statement piece for any curated home.",
+    description: "Honoring over two decades of candle mastery, Heritage is a bold and comforting composition of rare amber resin, smoky bourbon vanilla, and cured tobacco leaves. A rich statement piece for any curated space.",
     scentPyramid: {
       top: ["Bourbon Spiced Rum", "Cardamom Pod", "Orange Peel"],
       heart: ["Aged Tobacco Leaf", "Toasted Vanilla Bean", "Clove Bud"],
@@ -117,7 +117,7 @@ export const PRODUCTS = [
       roomPlacement: "Living Room, Library, Den"
     },
     reviews: [
-      { id: 105, author: "Arthur L.", rating: 5, date: "1 week ago", verified: true, title: "Pure luxury in every sense", comment: "The crackling wood wick adds an unbelievable atmosphere. Smells like an upscale members club in London." }
+      { id: 105, author: "Verified Patron • Hyderabad", rating: 5, date: "1 week ago", verified: true, title: "Pure luxury in every sense", comment: "The crackling wood wick adds an unbelievable atmosphere. Smells like an upscale luxury club." }
     ]
   },
   {
@@ -125,8 +125,8 @@ export const PRODUCTS = [
     title: "Layne",
     slug: "layne",
     category: "Luxury",
-    collection: "Laguna Boutique",
-    price: 36.00,
+    collection: "Boutique Reserve",
+    price: 1399.00,
     comparePrice: null,
     rating: 4.7,
     reviewCount: 29,
@@ -141,12 +141,12 @@ export const PRODUCTS = [
     wick: "Lead-Free Cotton Wick",
     netWeight: "10.5 oz / 298g",
     vessel: "Frosted Sea-Glass Tumbler",
-    tagline: "Coastal jasmine blossoms touched by sea salt and morning mist.",
-    description: "Inspired by the sunrise over Laguna Beach, Layne pairs blooming night jasmine with crisp Pacific salt air, white tea leaves, and sun-warmed driftwood. Refreshing and deeply uplifting.",
+    tagline: "Indian night-blooming jasmine touched by coastal breeze and tea leaves.",
+    description: "Inspired by misty coastal mornings, Layne pairs blooming night jasmine (Mogra) with crisp sea salt air, Darjeeling white tea leaves, and sun-warmed driftwood. Refreshing and deeply uplifting.",
     scentPyramid: {
-      top: ["Pacific Sea Salt", "Ozone Mist", "White Tea"],
-      heart: ["Night-Blooming Jasmine", "Cyclamen", "Neroli"],
-      base: ["Bleached Driftwood", "Clean Musk", "Soft Sandalwood"]
+      top: ["Coastal Sea Salt", "Ozone Mist", "Darjeeling White Tea"],
+      heart: ["Night-Blooming Mogra Jasmine", "Cyclamen", "Neroli"],
+      base: ["Bleached Driftwood", "Clean Musk", "Mysore Sandalwood"]
     },
     specs: {
       intensity: "Medium",
@@ -154,35 +154,35 @@ export const PRODUCTS = [
       roomPlacement: "Entryway, Living Room, Sunroom"
     },
     reviews: [
-      { id: 106, author: "Gwen R.", rating: 5, date: "2 weeks ago", verified: true, title: "Reminds me of Pacific Coast Highway", comment: "Clean, breezy, and floral without being sweet. One of my all-time favorites." }
+      { id: 106, author: "Verified Buyer • Goa", rating: 5, date: "2 weeks ago", verified: true, title: "Fresh, breezy and deeply calming", comment: "Clean, breezy, and floral without being sweet. One of my all-time favorites for coastal living." }
     ]
   },
   {
     id: 5,
-    title: "821-A Holiday Reserve",
-    slug: "821-a-holiday",
+    title: "Festive Reserve 821",
+    slug: "festive-reserve-821",
     category: "Heirloom Artisan",
-    collection: "Fall / Winter Collection",
-    price: 39.00,
-    comparePrice: 45.00,
+    collection: "Festive & Winter Collection",
+    price: 1549.00,
+    comparePrice: 1799.00,
     rating: 5.0,
     reviewCount: 64,
     image: fallWinterImg,
     hoverImage: privateLabelImg,
     images: [fallWinterImg, privateLabelImg, foundersImg],
     isBestseller: true,
-    tag: "Seasonal Favorite",
+    tag: "Festive Favorite",
     scentFamily: "Spicy & Gourmand",
     burnTime: "65 Hours",
     waxType: "100% Pure Organic Soy Wax",
     wick: "Organic Cotton Braided Wick",
     netWeight: "11 oz / 312g",
     vessel: "Lustrous Emerald Glazed Ceramic",
-    tagline: "Ceylon cinnamon bark, baked Honeycrisp apples, and roasted clove.",
-    description: "The ultimate fireside fragrance. 821-A captures the essence of holiday gatherings with notes of crisp apple slices simmering in brown sugar, ground nutmeg, and warm charred hearth embers.",
+    tagline: "Kerala cinnamon bark, spiced apples, and roasted clove.",
+    description: "The ultimate celebratory fragrance. Festive Reserve captures the essence of joyous gatherings with notes of crisp apple simmered with Kerala cinnamon bark, roasted cloves, and warm cedar hearth embers.",
     scentPyramid: {
-      top: ["Honeycrisp Apple", "Cider Zest", "Crushed Allspice"],
-      heart: ["Ceylon Cinnamon Bark", "Nutmeg", "Toasted Clove"],
+      top: ["Crisp Apple", "Cider Zest", "Crushed Allspice"],
+      heart: ["Kerala Cinnamon Bark", "Nutmeg", "Toasted Clove"],
       base: ["Roasted Chestnut", "Vanilla Custard", "Smoked Pine"]
     },
     specs: {
@@ -191,7 +191,7 @@ export const PRODUCTS = [
       roomPlacement: "Kitchen, Dining Room, Living Room"
     },
     reviews: [
-      { id: 107, author: "Sophia T.", rating: 5, date: "1 month ago", verified: true, title: "Warmest scent ever", comment: "Fills the home with instant holiday joy. The emerald vessel is a work of art on the mantle." }
+      { id: 107, author: "Verified Patron • Chennai", rating: 5, date: "1 month ago", verified: true, title: "Warmest festive scent ever", comment: "Fills the home with instant celebration and warmth. The emerald ceramic vessel is a work of art." }
     ]
   },
   {
@@ -199,8 +199,8 @@ export const PRODUCTS = [
     title: "CSLH Clean Linen",
     slug: "cslh-clean-linen",
     category: "Wellness",
-    collection: "Wellness Collection",
-    price: 35.00,
+    collection: "Wellness & Calm",
+    price: 1299.00,
     comparePrice: null,
     rating: 4.9,
     reviewCount: 31,
@@ -216,7 +216,7 @@ export const PRODUCTS = [
     netWeight: "10 oz / 283g",
     vessel: "White Satin Frosted Tumbler",
     tagline: "Crisp white linen dried in morning sunlight with sweet freesia.",
-    description: "Sun-drenched cotton sheets swaying on a gentle breeze. CSLH delivers crisp linen accords softened by white freesia petals, morning dew, and comforting light musk.",
+    description: "Sun-drenched cotton sheets swaying on a gentle morning breeze. CSLH delivers crisp linen accords softened by white freesia petals, morning dew, and comforting light musk.",
     scentPyramid: {
       top: ["Morning Breeze Accord", "Italian Bergamot", "Crisp Cotton"],
       heart: ["White Freesia", "Lily of the Valley", "Cotton Flower"],
@@ -228,7 +228,7 @@ export const PRODUCTS = [
       roomPlacement: "Laundry, Guest Room, Bath"
     },
     reviews: [
-      { id: 108, author: "Julian B.", rating: 5, date: "3 weeks ago", verified: true, title: "The ultimate fresh candle", comment: "So crisp and never overpowering. Makes the whole house smell freshly cleaned and serene." }
+      { id: 108, author: "Verified Buyer • Kolkata", rating: 5, date: "3 weeks ago", verified: true, title: "The ultimate fresh candle", comment: "So crisp and never overpowering. Makes the whole house smell freshly cleaned and serene." }
     ]
   },
   {
@@ -236,8 +236,8 @@ export const PRODUCTS = [
     title: "Sandalwood Shores",
     slug: "sandalwood-shores",
     category: "For Him",
-    collection: "Founder's Collection",
-    price: 40.00,
+    collection: "Signature Atelier Reserve",
+    price: 1599.00,
     comparePrice: null,
     rating: 4.8,
     reviewCount: 45,
@@ -252,11 +252,11 @@ export const PRODUCTS = [
     wick: "Braided Cotton Wick",
     netWeight: "11 oz / 312g",
     vessel: "Charcoal Slate Vessel with Wood Lid",
-    tagline: "Rich Australian sandalwood, warm cardamom, and golden cedar.",
-    description: "An elegant, grounding fragrance balancing creamy Australian sandalwood with aromatic cardamom seed, dark cedar, and a touch of smokey vetiver. Masculine, warm, and distinctly modern.",
+    tagline: "Rich Mysore sandalwood, warm green cardamom, and golden cedar.",
+    description: "An elegant, grounding fragrance balancing creamy authentic Mysore sandalwood with aromatic green cardamom seed, dark Himalayan cedar, and a touch of smokey vetiver. Warm, refined, and distinctly modern.",
     scentPyramid: {
       top: ["Green Cardamom", "Cypress Needle", "Black Pepper"],
-      heart: ["Australian Sandalwood", "Virginia Cedar", "Iris Root"],
+      heart: ["Mysore Sandalwood", "Himalayan Cedar", "Iris Root"],
       base: ["Smoked Vetiver", "Golden Resin", "Dark Musk"]
     },
     specs: {
@@ -265,16 +265,16 @@ export const PRODUCTS = [
       roomPlacement: "Office, Living Room, Bedroom"
     },
     reviews: [
-      { id: 109, author: "Marcus P.", rating: 5, date: "4 weeks ago", verified: true, title: "Incredible depth", comment: "The cardamom and sandalwood balance is flawless. Elegant design too." }
+      { id: 109, author: "Verified Collector • Ahmedabad", rating: 5, date: "4 weeks ago", verified: true, title: "Incredible depth", comment: "The cardamom and Mysore sandalwood balance is flawless. Elegant minimalist design too." }
     ]
   },
   {
     id: 8,
-    title: "Laguna Breeze",
-    slug: "laguna-breeze",
+    title: "Coastal Breeze",
+    slug: "coastal-breeze",
     category: "Luxury",
-    collection: "Laguna Boutique",
-    price: 38.00,
+    collection: "Boutique Reserve",
+    price: 1499.00,
     comparePrice: null,
     rating: 5.0,
     reviewCount: 58,
@@ -290,9 +290,9 @@ export const PRODUCTS = [
     netWeight: "11 oz / 312g",
     vessel: "Polished Gold Rimmed Glass Vessel",
     tagline: "Coastal sea spray, sun-bleached driftwood, and wild citrus sage.",
-    description: "The essence of our coastal home. Laguna Breeze captures the vibrant scent of Pacific tides crashing against sun-warmed rocks, blended with wild coastal sage and vibrant California citrus.",
+    description: "The essence of coastal tranquility. Coastal Breeze captures the vibrant scent of oceanic tides crashing against warm rocks, blended with wild coastal sage and vibrant citrus zest.",
     scentPyramid: {
-      top: ["California Blood Orange", "Ocean Mist", "Crushed Sage"],
+      top: ["Blood Orange", "Ocean Mist", "Crushed Sage"],
       heart: ["Sea Fennel", "Wild Rosemary", "Coastal Violet"],
       base: ["Weathered Driftwood", "Ambergris", "White Cedar"]
     },
@@ -302,16 +302,16 @@ export const PRODUCTS = [
       roomPlacement: "Living Room, Kitchen, Entryway"
     },
     reviews: [
-      { id: 110, author: "Chloe H.", rating: 5, date: "1 month ago", verified: true, title: "Our signature home scent", comment: "Every guest who walks in asks what candle is burning. So vibrant and clean!" }
+      { id: 110, author: "Interior Designer • New Delhi", rating: 5, date: "1 month ago", verified: true, title: "Our signature home scent", comment: "Every guest who walks in asks what candle is burning. So vibrant, uplifting, and clean!" }
     ]
   },
   {
     id: 9,
     title: "Heirloom Tomato & Basil",
     slug: "heirloom-tomato-basil",
-    category: "Heirloom Tomato",
+    category: "Heirloom Botanical",
     collection: "Heirloom Artisan",
-    price: 44.00,
+    price: 1749.00,
     comparePrice: null,
     rating: 4.9,
     reviewCount: 27,
@@ -326,11 +326,11 @@ export const PRODUCTS = [
     wick: "Double Cotton Wick",
     netWeight: "12 oz / 340g",
     vessel: "Handmade Terracotta Vessel",
-    tagline: "Sun-ripened green tomato vines, crushed Genovese basil, and moss.",
-    description: "An evocative greenhouse escape. Crisp green tomato leaves freshly plucked from the vine, crushed Genovese basil, moist garden soil, and a splash of Meyer lemon.",
+    tagline: "Sun-ripened green tomato vines, crushed sweet basil, and garden moss.",
+    description: "An evocative greenhouse escape. Crisp green tomato leaves freshly plucked from the vine, crushed sweet basil, moist garden soil, and a splash of citrus zest.",
     scentPyramid: {
-      top: ["Green Tomato Vine", "Meyer Lemon Zest", "Petitgrain"],
-      heart: ["Genovese Sweet Basil", "Tarragon", "Garden Mint"],
+      top: ["Green Tomato Vine", "Lemon Zest", "Petitgrain"],
+      heart: ["Sweet Basil", "Tarragon", "Garden Mint"],
       base: ["Damp Earth Accord", "Oakmoss", "Sheer Musk"]
     },
     specs: {
@@ -339,17 +339,17 @@ export const PRODUCTS = [
       roomPlacement: "Kitchen, Dining, Greenhouse"
     },
     reviews: [
-      { id: 111, author: "Nadia F.", rating: 5, date: "2 weeks ago", verified: true, title: "Like a summer garden in Provence", comment: "Remarkably authentic green tomato scent. Extremely refreshing!" }
+      { id: 111, author: "Verified Patron • Bengaluru", rating: 5, date: "2 weeks ago", verified: true, title: "Like a lush botanical garden", comment: "Remarkably authentic green tomato and basil scent. Extremely refreshing!" }
     ]
   },
   {
     id: 10,
-    title: "Murano Glass Amber & Rose",
-    slug: "murano-glass-amber-rose",
-    category: "Heirloom Murano Glass",
+    title: "Artisan Glass Amber & Rose",
+    slug: "artisan-glass-amber-rose",
+    category: "Heirloom Collector Glass",
     collection: "Luxury",
-    price: 68.00,
-    comparePrice: 85.00,
+    price: 2499.00,
+    comparePrice: 2999.00,
     rating: 5.0,
     reviewCount: 22,
     image: boutiqueImg,
@@ -362,12 +362,12 @@ export const PRODUCTS = [
     waxType: "100% Pure Organic Soy Wax",
     wick: "Triple Cotton Wick",
     netWeight: "16 oz / 454g",
-    vessel: "Hand-Blown Venetian Murano Glass Vessel",
-    tagline: "Damascena rose petals, warm golden amber, and oud wood.",
-    description: "An opulent collector's piece poured in an authentic hand-blown Venetian-style Murano glass bowl. Fragranced with velvety Damascena rose, liquid amber, and rare royal oud.",
+    vessel: "Hand-Blown Collector Glass Vessel",
+    tagline: "Damascena rose petals, warm golden amber, and royal oud wood.",
+    description: "An opulent collector's piece poured in an authentic hand-blown glass bowl. Fragranced with velvety Damascena rose petals, golden liquid amber, and rare Indian royal oud.",
     scentPyramid: {
       top: ["Damascena Rose", "Pink Peppercorn", "Bergamot"],
-      heart: ["Moroccan Rose Absolute", "Smoked Oud", "Orris"],
+      heart: ["Rose Absolute", "Smoked Oud", "Orris"],
       base: ["Golden Amber", "Labdanum", "Patchouli Leaf"]
     },
     specs: {
@@ -376,7 +376,7 @@ export const PRODUCTS = [
       roomPlacement: "Foyer, Dining Table, Master Suite"
     },
     reviews: [
-      { id: 112, author: "Isabella V.", rating: 5, date: "3 weeks ago", verified: true, title: "A true heirloom centerpiece", comment: "The glass vessel alone is worth every dollar. The scent is pure royalty." }
+      { id: 112, author: "Verified Collector • South Mumbai", rating: 5, date: "3 weeks ago", verified: true, title: "A true heirloom centerpiece", comment: "The hand-blown vessel alone is worth every rupee. The scent throw is pure royalty." }
     ]
   },
   {
@@ -385,26 +385,26 @@ export const PRODUCTS = [
     slug: "discovery-scent-flight-4",
     category: "Samples",
     collection: "Discovery Samplers",
-    price: 28.00,
-    comparePrice: 36.00,
+    price: 899.00,
+    comparePrice: 1299.00,
     rating: 4.9,
     reviewCount: 88,
     image: wellnessImg,
     hoverImage: milestoneImg,
     images: [wellnessImg, milestoneImg],
     isBestseller: true,
-    tag: "Includes $20 Credit",
+    tag: "Includes ₹500 Voucher",
     scentFamily: "Assorted",
     burnTime: "15 Hours per tin (60 hrs total)",
     waxType: "100% Pure Organic Soy Wax",
     wick: "Lead-Free Cotton Wicks",
     netWeight: "4 x 2 oz / 56g",
     vessel: "Golden Travel Tins in Embossed Linen Gift Box",
-    tagline: "Sample our signature scents and receive $20 towards your full size candle.",
-    description: "Discover your signature home scent with our customizable discovery flight. Includes 4 hand-poured travel tins in an embossed keepsake box, plus a voucher code for $20 off your next full-size candle.",
+    tagline: "Sample our signature scents and receive ₹500 towards your full size candle.",
+    description: "Discover your signature home fragrance with our customizable discovery flight. Includes 4 hand-poured travel tins in an embossed keepsake box, plus a voucher code for ₹500 off your next full-size candle.",
     scentPyramid: {
       top: ["Forest Ave.", "Perloat Lavender", "Heritage Amber"],
-      heart: ["Laguna Breeze", "Layne Jasmine", "Clean Linen"],
+      heart: ["Coastal Breeze", "Layne Jasmine", "Clean Linen"],
       base: ["Customizable Selection"]
     },
     specs: {
@@ -413,7 +413,7 @@ export const PRODUCTS = [
       roomPlacement: "Travel, Desk, Gift"
     },
     reviews: [
-      { id: 113, author: "Lauren C.", rating: 5, date: "4 days ago", verified: true, title: "Best way to find your favorite", comment: "Loved all 4 scents! Used my $20 coupon immediately on a full-size Forest Ave." }
+      { id: 113, author: "Verified Patron • Gurgaon", rating: 5, date: "4 days ago", verified: true, title: "Best way to find your favorite", comment: "Loved all 4 scents! Used my ₹500 coupon immediately on a full-size Forest Ave." }
     ]
   },
   {
@@ -422,8 +422,8 @@ export const PRODUCTS = [
     slug: "artisan-candle-care-kit",
     category: "Accessories",
     collection: "Boutique Accessories",
-    price: 32.00,
-    comparePrice: 40.00,
+    price: 1199.00,
+    comparePrice: 1499.00,
     rating: 4.9,
     reviewCount: 35,
     image: boutiqueImg,
@@ -450,20 +450,20 @@ export const PRODUCTS = [
       roomPlacement: "Candle Care Tray"
     },
     reviews: [
-      { id: 114, author: "Daniel W.", rating: 5, date: "1 week ago", verified: true, title: "Stunning quality", comment: "Heavy, solid brass that feels great in hand. Trims wicks cleanly every time." }
+      { id: 114, author: "Verified Buyer • Chandigarh", rating: 5, date: "1 week ago", verified: true, title: "Stunning quality", comment: "Heavy, solid brass that feels great in hand. Trims wicks cleanly every time." }
     ]
   }
 ];
 
 export const CATEGORIES = [
   "All Candles",
-  "Founder's",
+  "Signature Atelier",
   "Luxury",
   "For Him",
   "Wellness",
   "Heirloom Artisan",
-  "Heirloom Murano Glass",
-  "Heirloom Tomato",
+  "Heirloom Collector Glass",
+  "Heirloom Botanical",
   "Samples",
   "Accessories"
 ];

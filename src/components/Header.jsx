@@ -32,13 +32,13 @@ export default function Header({
       page: 'shop',
       category: 'All Candles',
       dropdown: [
-        { name: "Founder's Collection", page: 'shop', category: "Founder's", badge: "Signature" },
+        { name: "Signature Atelier Reserve", page: 'shop', category: "Signature Atelier", badge: "Signature" },
         { name: "Luxury Collection", page: 'shop', category: "Luxury" },
         { name: "For Him Collection", page: 'shop', category: "For Him" },
-        { name: "Wellness & Aromatherapy", page: 'shop', category: "Wellness" },
+        { name: "Wellness & Calm", page: 'shop', category: "Wellness" },
         { name: "Heirloom Artisan", page: 'shop', category: "Heirloom Artisan" },
-        { name: "Heirloom Murano Glass", page: 'shop', category: "Heirloom Murano Glass", badge: "Exclusive" },
-        { name: "Heirloom Tomato & Basil", page: 'shop', category: "Heirloom Tomato" },
+        { name: "Heirloom Collector Glass", page: 'shop', category: "Heirloom Collector Glass", badge: "Exclusive" },
+        { name: "Heirloom Botanical", page: 'shop', category: "Heirloom Botanical" },
         { name: "Discovery Samples", page: 'samples', category: "Samples" },
         { name: "Artisan Accessories", page: 'shop', category: "Accessories" },
         { name: "View All Candles", page: 'shop', category: "All Candles" }
@@ -53,7 +53,7 @@ export default function Header({
       page: 'media',
       dropdown: [
         { name: 'Scent Journal (Blog)', page: 'media', tab: 'blog' },
-        { name: 'YouTube Podcast', page: 'media', tab: 'podcast' },
+        { name: 'Podcast & Audio', page: 'media', tab: 'podcast' },
         { name: 'Press & Accolades', page: 'media', tab: 'press' }
       ]
     },
@@ -83,7 +83,7 @@ export default function Header({
     <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         
-        {/* Left Side: Brand Logo Wordmark with Elegant Flame Script */}
+        {/* Left Side: Brand Logo */}
         <div className="header-logo-group">
           <button 
             className="icon-btn mobile-menu-btn" 
@@ -100,8 +100,8 @@ export default function Header({
           >
             <span className="logo-script-accent">A</span>
             <div className="logo-text-group">
-              <span className="logo-wordmark">Nnette Pure</span>
-              <span className="logo-submark">Candles &bull; Laguna Beach</span>
+              <span className="logo-wordmark">ANNETTE PURE</span>
+              <span className="logo-submark">HANDMADE SOY CANDLES</span>
             </div>
           </button>
         </div>

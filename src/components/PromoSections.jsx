@@ -14,16 +14,16 @@ export default function PromoSections({ onNavigate }) {
       >
         <div className="seasonal-overlay" />
         <div className="seasonal-content">
-          <span className="seasonal-eyebrow">Autumn & Winter Vault</span>
+          <span className="seasonal-eyebrow">Festive & Winter Vault</span>
           <h2 className="seasonal-title">Fireside Moments & Spiced Amber</h2>
           <p className="seasonal-desc">
-            Wrap your home in rich warmth. Featuring rare Madagascar vanilla, Ceylon cinnamon bark, smoky cedarwood, and roasted Honeycrisp apples.
+            Wrap your home in rich warmth. Featuring rare Madagascar vanilla, Kerala cinnamon bark, smoky cedarwood, and roasted festive apples.
           </p>
           <button 
             className="btn-luxury-cta"
             onClick={() => onNavigate && onNavigate('shop', { category: 'Heirloom Artisan' })}
           >
-            Shop Fall / Winter Candles &rarr;
+            Shop Festive Candles &rarr;
           </button>
         </div>
       </div>
@@ -33,13 +33,13 @@ export default function PromoSections({ onNavigate }) {
         
         {/* Tile 1: Boutique */}
         <div className="promo-tile" onClick={() => onNavigate && onNavigate('boutique')}>
-          <img src={boutiqueImg} alt="The Laguna Beach Boutique" className="promo-tile-bg" />
+          <img src={boutiqueImg} alt="The Flagship Atelier" className="promo-tile-bg" />
           <div className="promo-tile-overlay" />
           <div className="promo-tile-content">
             <span className="promo-tile-tag">Flagship Experience</span>
-            <h3 className="promo-tile-title">The Laguna Boutique</h3>
+            <h3 className="promo-tile-title">The Atelier Experience</h3>
             <p className="promo-tile-text">
-              Visit our sunlit coastal studio. Experience custom scent pairing consultations and our sustainable vessel refill bar.
+              Visit our experiential studios in Mumbai & Bengaluru. Experience custom scent pairing consultations and our sustainable vessel refill bar.
             </p>
             <button 
               className="btn-luxury-outline promo-tile-btn"
@@ -61,7 +61,7 @@ export default function PromoSections({ onNavigate }) {
             <span className="promo-tile-tag">Mindful Living</span>
             <h3 className="promo-tile-title">Embrace Calm, Embrace Ritual</h3>
             <p className="promo-tile-text">
-              Transform your evening routine. Formulated with soothing French lavender, chamomile, and non-toxic botanical essences.
+              Transform your evening routine. Formulated with soothing Kashmiri lavender, chamomile, and non-toxic botanical essences.
             </p>
             <button 
               className="btn-luxury-outline promo-tile-btn"
@@ -83,7 +83,7 @@ export default function PromoSections({ onNavigate }) {
         <blockquote className="divider-quote">
           "Clean burn, full aroma, and a long-lasting sensory experience that honors the sacred space of your home."
         </blockquote>
-        <span className="divider-author">&mdash; Annette Makutam, Master Chandler</span>
+        <span className="divider-author">&mdash; Master Chandler, Annette Pure Atelier</span>
       </div>
 
     </section>

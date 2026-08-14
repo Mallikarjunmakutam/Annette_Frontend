@@ -27,24 +27,24 @@ export default function AccountPage({
   // Default mock orders if none placed yet
   const displayOrders = orders.length > 0 ? orders : [
     {
-      orderNumber: "AP-784210",
+      orderNumber: "AP-IN-784210",
       date: "Aug 02, 2026",
       status: "Delivered",
-      total: 76.00,
+      total: 2848,
       shippingCost: 0,
-      shippingMethodTitle: "Standard Free U.S. Shipping",
+      shippingMethodTitle: "Standard Complimentary Pan-India Shipping",
       estimatedDelivery: "Aug 06, 2026",
       shippingAddress: {
-        name: "Clara Evans",
-        address: "452 Ocean Vista Lane, Apt 4B",
-        city: "Laguna Beach",
-        state: "CA",
-        zip: "92651",
-        country: "United States"
+        name: "Ananya Verma",
+        address: "14 Altamount Road, Apt 8B",
+        city: "Mumbai",
+        state: "Maharashtra",
+        zip: "400026",
+        country: "India"
       },
       items: [
-        { id: 1, title: "Forest Ave.", price: 38.00, quantity: 1, image: PRODUCTS[0].image },
-        { id: 2, title: "Perloat", price: 38.00, quantity: 1, image: PRODUCTS[1].image }
+        { id: 1, title: "Forest Ave.", price: 1499, quantity: 1, image: PRODUCTS[0].image },
+        { id: 2, title: "Perloat", price: 1349, quantity: 1, image: PRODUCTS[1].image }
       ]
     }
   ];
@@ -87,7 +87,7 @@ export default function AccountPage({
               <input
                 type="email"
                 required
-                placeholder="clara@example.com"
+                placeholder="patron@annettepure.in"
                 value={authEmail}
                 onChange={(e) => setAuthEmail(e.target.value)}
                 className="form-input"
@@ -130,14 +130,14 @@ export default function AccountPage({
         <div className="account-header-container">
           <div className="account-user-info">
             <div className="user-avatar-circle">
-              <span>CE</span>
+              <span>AP</span>
             </div>
             <div>
               <span className="user-greeting">Welcome back,</span>
-              <h1 className="user-name">Clara Evans</h1>
+              <h1 className="user-name">Patron Member</h1>
               <div className="user-badge-row">
                 <span className="loyalty-pill"><Sparkles size={12} /> Gold Circle Member</span>
-                <span className="loyalty-points">450 Scent Points ($45 Reward)</span>
+                <span className="loyalty-points">450 Scent Points (₹450 Reward Voucher)</span>
               </div>
             </div>
           </div>
@@ -238,14 +238,14 @@ export default function AccountPage({
                         <img src={item.image} alt={item.title} />
                         <div>
                           <h4>{item.title}</h4>
-                          <span>Qty: {item.quantity} &bull; ${item.price.toFixed(2)}</span>
+                          <span>Qty: {item.quantity} &bull; ₹{item.price.toLocaleString('en-IN')}</span>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   <div className="order-card-footer">
-                    <span>Total: <strong>${displayOrders[0].total.toFixed(2)}</strong></span>
+                    <span>Total: <strong>₹{displayOrders[0].total.toLocaleString('en-IN')}</strong></span>
                     <button 
                       className="btn-luxe"
                       onClick={() => setActiveTab('orders')}
@@ -286,7 +286,7 @@ export default function AccountPage({
                     </div>
                     <div className="tracking-step in-progress">
                       <Truck size={14} />
-                      <span>In Transit with Carrier</span>
+                      <span>In Transit via Blue Dart</span>
                     </div>
                     <div className="tracking-step">
                       <Clock size={14} />
@@ -301,7 +301,7 @@ export default function AccountPage({
                         <div className="order-item-info">
                           <h4>{item.title}</h4>
                           <span>Quantity: {item.quantity} &bull; 100% Organic Soy</span>
-                          <span className="order-item-unit-price">${item.price.toFixed(2)} each</span>
+                          <span className="order-item-unit-price">₹{item.price.toLocaleString('en-IN')} each</span>
                         </div>
                         <button 
                           className="btn-luxe order-reorder-btn"
@@ -322,7 +322,7 @@ export default function AccountPage({
                     </div>
                     <div className="order-total-amount">
                       <span>Total Paid:</span>
-                      <strong>${ord.total.toFixed(2)}</strong>
+                      <strong>₹{Math.round(ord.total).toLocaleString('en-IN')}</strong>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ export default function AccountPage({
                       <div className="product-info">
                         <span className="product-collection-label">{p.category}</span>
                         <h3 className="product-title" onClick={() => onNavigate('product', { product: p })}>{p.title}</h3>
-                        <span className="product-price">${p.price.toFixed(2)}</span>
+                        <span className="product-price">₹{p.price.toLocaleString('en-IN')}</span>
                         
                         <div className="wishlist-card-actions">
                           <button 
@@ -398,10 +398,10 @@ export default function AccountPage({
                 <div className="sub-card-header">
                   <div>
                     <span className="sub-status-tag">{subStatus}</span>
-                    <h3 className="sub-title">The Master Scent Club</h3>
-                    <p className="sub-meta">10% VIP Discount &bull; Free Shipping on Every Box</p>
+                    <h3 className="sub-title">The Atelier Scent Club</h3>
+                    <p className="sub-meta">10% VIP Discount &bull; Free Pan-India Shipping on Every Box</p>
                   </div>
-                  <span className="sub-price">$34.20 / every 60 days</span>
+                  <span className="sub-price">₹1,349 / every 60 days</span>
                 </div>
 
                 <div className="sub-current-item">
@@ -459,10 +459,10 @@ export default function AccountPage({
 
               <div className="address-card default">
                 <div className="address-badge">Default Shipping Destination</div>
-                <h3>Clara Evans</h3>
-                <p>452 Ocean Vista Lane, Apt 4B</p>
-                <p>Laguna Beach, CA 92651, United States</p>
-                <p>Phone: (949) 555-0199</p>
+                <h3>Patron Destination</h3>
+                <p>14 Altamount Road, Penthouse 8B</p>
+                <p>South Mumbai, Maharashtra - 400026, India</p>
+                <p>Phone: +91 98200 12345</p>
 
                 <div className="address-card-actions">
                   <button className="btn-luxe">Edit Address</button>

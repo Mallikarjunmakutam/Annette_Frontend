@@ -114,7 +114,7 @@ export default function MediaPage({ initialTab = 'blog', onNavigate }) {
               <div className="podcast-badge">Official Audio Series</div>
               <h2 className="podcast-series-title">Behind the Flame: Conversations on Scent & Soul</h2>
               <p className="podcast-series-desc">
-                Hosted by Annette Makutam. An intimate audio podcast diving into the psychology of memory, olfactory craftsmanship, non-toxic living, and building an artisan business.
+                Presented by Annette Pure Atelier. An intimate audio podcast diving into the psychology of memory, olfactory craftsmanship, non-toxic living, and building an artisan business.
               </p>
             </div>
 

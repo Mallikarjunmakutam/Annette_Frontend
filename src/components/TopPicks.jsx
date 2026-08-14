@@ -16,17 +16,17 @@ export default function TopPicks({ onNavigate, onQuickView, onAddToCart }) {
       description: "Sun-drenched golden pineapple, creamy coconut water, and a warm base of amber resin. Captures lingering coastal summer afternoons.",
       image: boutiqueImg,
       hoverImage: wellnessImg,
-      price: 38.00,
-      season: "Late Summer / Early Fall"
+      price: 1499.00,
+      season: "Monsoon & Festive Reserve"
     },
     {
       id: 102,
-      title: "Fresh Cut Herbs & Lavender",
+      title: "Fresh Cut Herbs & Kashmiri Lavender",
       category: "Aromatherapy Reserve",
-      description: "Crisp rosemary sprigs, crushed garden thyme, and blooming French lavender. Hand-poured to purify your home ambiance.",
+      description: "Crisp rosemary sprigs, crushed garden thyme, and blooming Kashmiri lavender. Hand-poured to purify your home ambiance.",
       image: wellnessImg,
       hoverImage: foundersImg,
-      price: 36.00,
+      price: 1399.00,
       season: "All-Year Wellness"
     },
     {
@@ -36,17 +36,17 @@ export default function TopPicks({ onNavigate, onQuickView, onAddToCart }) {
       description: "Simmering wild mountain blueberries, baked biscuit crust, and rich Madagascar bourbon vanilla bean.",
       image: fallWinterImg,
       hoverImage: boutiqueImg,
-      price: 40.00,
-      season: "Fall / Winter Reserve"
+      price: 1599.00,
+      season: "Winter Reserve"
     },
     {
       id: 104,
       title: "Sun-Kissed Citrus & Sea Pine",
       category: "Coastal Botanicals",
-      description: "Zesty California blood orange, salty ocean spray, and sun-warmed coastal pine needles. Bright, energetic, and clean.",
+      description: "Zesty Indian blood orange, salty ocean spray, and sun-warmed coastal pine needles. Bright, energetic, and clean.",
       image: foundersImg,
       hoverImage: fallWinterImg,
-      price: 38.00,
+      price: 1499.00,
       season: "Spring & Summer"
     }
   ];
@@ -95,7 +95,7 @@ export default function TopPicks({ onNavigate, onQuickView, onAddToCart }) {
           <p className="top-picks-desc">{current.description}</p>
           
           <div className="top-picks-details">
-            <span className="top-picks-price">${current.price.toFixed(2)}</span>
+            <span className="top-picks-price">₹{current.price.toLocaleString('en-IN')}</span>
             <span className="top-picks-spec">100% Pure Soy &bull; 65 Hr Burn</span>
           </div>
 

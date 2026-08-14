@@ -18,7 +18,7 @@ export function CartDrawer({
   const [giftNote, setGiftNote] = useState('');
 
   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-  const FREE_SHIPPING_THRESHOLD = 150.00;
+  const FREE_SHIPPING_THRESHOLD = 1499.00;
   const amountNeededForFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
   const freeShippingProgress = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
 
@@ -80,9 +80,9 @@ export function CartDrawer({
           <div className="shipping-meter-text">
             <Truck size={14} className="shipping-meter-icon" />
             {amountNeededForFreeShipping === 0 ? (
-              <span className="shipping-success"><strong>You have unlocked FREE U.S. Shipping!</strong></span>
+              <span className="shipping-success"><strong>You have unlocked FREE Pan-India Shipping!</strong></span>
             ) : (
-              <span>Add <strong>${amountNeededForFreeShipping.toFixed(2)}</strong> more for <strong>FREE U.S. Shipping</strong></span>
+              <span>Add <strong>₹{Math.round(amountNeededForFreeShipping).toLocaleString('en-IN')}</strong> more for <strong>FREE Pan-India Shipping</strong></span>
             )}
           </div>
           <div className="shipping-progress-track">
@@ -128,7 +128,7 @@ export function CartDrawer({
                       >
                         {item.title}
                       </h4>
-                      <p className="cart-item-price">${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className="cart-item-price">₹{(item.price * item.quantity).toLocaleString('en-IN')}</p>
                     </div>
                     
                     <span className="cart-item-unit">100% Organic Soy &bull; 11 oz</span>
@@ -215,27 +215,27 @@ export function CartDrawer({
             <div className="cart-totals-section">
               <div className="cart-totals-row">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toLocaleString('en-IN')}</span>
               </div>
               {discountPercent > 0 && (
                 <div className="cart-totals-row discount-row">
                   <span>VIP Discount ({discountPercent}%)</span>
-                  <span>-${discountAmount.toFixed(2)}</span>
+                  <span>-₹{discountAmount.toLocaleString('en-IN')}</span>
                 </div>
               )}
               <div className="cart-totals-row final-total-row">
                 <span>Estimated Total</span>
-                <span className="final-total-amount">${finalTotal.toFixed(2)}</span>
+                <span className="final-total-amount">₹{Math.round(finalTotal).toLocaleString('en-IN')}</span>
               </div>
             </div>
 
-            <p className="cart-totals-desc">Taxes and final shipping calculated at checkout.</p>
+            <p className="cart-totals-desc">Taxes and final Pan-India shipping calculated at checkout.</p>
             
             <button 
               className="btn-luxe btn-solid cart-checkout-btn" 
               onClick={handleProceedToCheckout}
             >
-              <span>Proceed to Checkout &bull; ${finalTotal.toFixed(2)}</span>
+              <span>Proceed to Checkout &bull; ₹{Math.round(finalTotal).toLocaleString('en-IN')}</span>
               <ArrowRight size={16} />
             </button>
 
@@ -258,7 +258,7 @@ export function CartDrawer({
 // 2. LIVE INSTANT SEARCH DRAWER
 export function SearchDrawer({ isOpen, onClose, onNavigate }) {
   const [query, setQuery] = useState('');
-  const quickTags = ["Founder's", "Wellness", "Lavender", "Sandalwood", "Murano Glass", "Samples", "Seasonal"];
+  const quickTags = ["Signature Atelier", "Wellness", "Kashmiri Lavender", "Mysore Sandalwood", "Collector Glass", "Samples", "Festive"];
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
@@ -351,7 +351,7 @@ export function SearchDrawer({ isOpen, onClose, onNavigate }) {
                         <span className="search-result-category">{p.category}</span>
                         <h4 className="search-result-title">{p.title}</h4>
                         <span className="search-result-scent">{p.scentFamily}</span>
-                        <span className="search-result-price">${p.price.toFixed(2)}</span>
+                        <span className="search-result-price">₹{p.price.toLocaleString('en-IN')}</span>
                       </div>
                     </div>
                   ))}
@@ -434,11 +434,11 @@ export function QuickViewModal({ product, isOpen, onClose, onAddToCart, onNaviga
               </div>
 
               <div className="qv-price-row">
-                <span className="qv-price">${product.price.toFixed(2)}</span>
+                <span className="qv-price">₹{product.price.toLocaleString('en-IN')}</span>
                 {product.comparePrice && (
-                  <span className="qv-price-compare">${product.comparePrice.toFixed(2)}</span>
+                  <span className="qv-price-compare">₹{product.comparePrice.toLocaleString('en-IN')}</span>
                 )}
-                <span className="qv-in-stock-badge">In Stock &bull; Hand-Poured</span>
+                <span className="qv-in-stock-badge">In Stock &bull; Hand-Poured in India</span>
               </div>
 
               <p className="qv-tagline"><em>"{product.tagline || 'Elegance translated through scent.'}"</em></p>
@@ -487,7 +487,7 @@ export function QuickViewModal({ product, isOpen, onClose, onAddToCart, onNaviga
                 </div>
                 
                 <button className="btn-luxe btn-solid qv-add-btn" onClick={handleAdd}>
-                  Add to Scent Bag &bull; ${(product.price * quantity).toFixed(2)}
+                  Add to Scent Bag &bull; ₹{(product.price * quantity).toLocaleString('en-IN')}
                 </button>
               </div>
 

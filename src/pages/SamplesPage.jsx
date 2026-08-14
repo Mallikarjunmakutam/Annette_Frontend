@@ -14,8 +14,8 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
   ]);
   const [addedToast, setAddedToast] = useState(false);
 
-  const boxPrice = boxSize === 4 ? 28.00 : 38.00;
-  const voucherAmount = 20.00;
+  const boxPrice = boxSize === 4 ? 899.00 : 1299.00;
+  const voucherAmount = 500.00;
 
   const handleSelectScent = (product) => {
     if (selectedScents.some(s => s.id === product.id)) {
@@ -42,7 +42,7 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
       price: boxPrice,
       image: wellnessImg,
       quantity: 1,
-      description: `Custom box with: ${selectedScents.map(s => s.title).join(', ')} + $20 Full Size Voucher`
+      description: `Custom box with: ${selectedScents.map(s => s.title).join(', ')} + ₹500 Full Size Voucher`
     };
     onAddToCart(boxItem, 1);
     setAddedToast(true);
@@ -66,7 +66,7 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
           <div className="voucher-highlight-banner">
             <Gift size={20} className="voucher-icon" />
             <span>
-              <strong>Special Offer:</strong> Every Discovery Flight includes a <strong>${voucherAmount.toFixed(2)} voucher code</strong> redeemable toward any full-size candle!
+              <strong>Special Offer:</strong> Every Discovery Flight includes a <strong>₹{voucherAmount} voucher code</strong> redeemable toward any full-size candle!
             </span>
           </div>
         </div>
@@ -95,9 +95,9 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
             <div className="box-size-info">
               <h3>4-Scent Flight</h3>
               <p>4 &times; 2 oz Artisan Travel Tins (60 hrs total burn)</p>
-              <span className="box-size-voucher">Includes $20 Full-Size Credit</span>
+              <span className="box-size-voucher">Includes ₹500 Full-Size Credit</span>
             </div>
-            <span className="box-size-price">$28.00</span>
+            <span className="box-size-price">₹899</span>
           </div>
 
           <div 
@@ -110,9 +110,9 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
             <div className="box-size-info">
               <h3>6-Scent Collector Flight</h3>
               <p>6 &times; 2 oz Artisan Travel Tins (90 hrs total burn)</p>
-              <span className="box-size-voucher">Includes $20 Full-Size Credit</span>
+              <span className="box-size-voucher">Includes ₹500 Full-Size Credit</span>
             </div>
-            <span className="box-size-price">$38.00</span>
+            <span className="box-size-price">₹1,299</span>
           </div>
         </div>
 
@@ -155,8 +155,8 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
           <div className="tray-action-bar">
             <div className="tray-price-summary">
               <span className="tray-total-label">Total Box Price:</span>
-              <span className="tray-total-val">${boxPrice.toFixed(2)}</span>
-              <span className="tray-credit-note">(Your effective cost after $20 candle voucher: ${(boxPrice - 20).toFixed(2)})</span>
+              <span className="tray-total-val">₹{boxPrice.toLocaleString('en-IN')}</span>
+              <span className="tray-credit-note">(Your effective cost after ₹500 candle voucher: ₹{(boxPrice - 500).toLocaleString('en-IN')})</span>
             </div>
 
             <button 
@@ -165,14 +165,14 @@ export default function SamplesPage({ onAddToCart, onNavigate }) {
               onClick={handleAddBoxToCart}
             >
               <ShoppingBag size={18} />
-              <span>{isBoxFull ? `Add Discovery Flight to Bag &bull; $${boxPrice.toFixed(2)}` : `Select ${boxSize - selectedScents.length} more scents to complete box`}</span>
+              <span>{isBoxFull ? `Add Discovery Flight to Bag &bull; ₹${boxPrice.toLocaleString('en-IN')}` : `Select ${boxSize - selectedScents.length} more scents to complete box`}</span>
             </button>
           </div>
 
           {addedToast && (
             <div className="pdp-toast-feedback">
               <Check size={16} />
-              <span>Discovery Flight added to your scent bag with complimentary $20 voucher!</span>
+              <span>Discovery Flight added to your scent bag with complimentary ₹500 voucher!</span>
             </div>
           )}
         </div>

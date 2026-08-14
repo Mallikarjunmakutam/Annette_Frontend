@@ -9,37 +9,37 @@ export default function MilestoneBanner({ onNavigate }) {
         
         <div className="milestone-images-side">
           <div className="milestone-img-card primary">
-            <img src={milestoneImg} alt="22 Years of Handcrafting Candles" className="milestone-img" />
+            <img src={milestoneImg} alt="Two Decades of Handcrafting Candles" className="milestone-img" />
           </div>
           <div className="milestone-img-card secondary">
-            <img src={foundersImg} alt="Laguna Beach Workshop Heritage" className="milestone-img" />
+            <img src={foundersImg} alt="Atelier Workshop Heritage" className="milestone-img" />
             <div className="milestone-pill-badge">2004 &mdash; 2026</div>
           </div>
         </div>
 
         <div className="milestone-text-side">
-          <span className="milestone-eyebrow">Our Milestone Celebration</span>
-          <h2 className="milestone-title">22 years of love, intention & craftsmanship.</h2>
+          <span className="milestone-eyebrow">Our Atelier Milestone</span>
+          <h2 className="milestone-title">Over 20 years of intention, purity & craftsmanship.</h2>
           
           <p className="milestone-body">
-            What started in 2004 as an intimate search for clean-burning, headache-free candles in Annette's kitchen has blossomed into a beloved California fragrance maison.
+            What started in 2004 as an intimate search for clean-burning, non-toxic, headache-free candles has blossomed into a premier Indian botanical fragrance maison.
           </p>
           <p className="milestone-body">
-            Over the past two decades, we have remained proudly independent, steadfastly uncompromising on our non-toxic soy standards, and dedicated to elevating everyday rituals through the evocative power of scent.
+            Over the past two decades, our atelier has remained proudly independent, uncompromising on 100% natural organic soy wax, and dedicated to elevating everyday rituals through pure, evocative scent.
           </p>
 
           <div className="milestone-stats-row">
             <div className="milestone-stat">
-              <span className="stat-num">22+</span>
-              <span className="stat-label">Years of Artisan Pouring</span>
+              <span className="stat-num">20+</span>
+              <span className="stat-label">Years of Master Pouring</span>
             </div>
             <div className="milestone-stat">
               <span className="stat-num">100%</span>
-              <span className="stat-label">Pure American Soy Wax</span>
+              <span className="stat-label">Pure Botanical Soy Wax</span>
             </div>
             <div className="milestone-stat">
-              <span className="stat-num">45k+</span>
-              <span className="stat-label">Sanctuaries Illuminated</span>
+              <span className="stat-num">50k+</span>
+              <span className="stat-label">Indian Homes Illuminated</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export default function MilestoneBanner({ onNavigate }) {
               className="btn-luxury-outline"
               onClick={() => onNavigate && onNavigate('boutique')}
             >
-              Visit Our Boutique
+              Visit Our Atelier
             </button>
           </div>
         </div>

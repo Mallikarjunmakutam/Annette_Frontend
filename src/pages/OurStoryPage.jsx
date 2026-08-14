@@ -9,28 +9,28 @@ export default function OurStoryPage({ onNavigate }) {
   const milestones = [
     {
       year: "2004",
-      title: "The First Kitchen Pour",
-      description: "Frustrated by synthetic candles causing persistent headaches, Annette began melting natural soy wax and blending pure botanical oils on her kitchen stove in Southern California."
+      title: "The First Atelier Pour",
+      description: "Frustrated by synthetic paraffin candles causing persistent headaches, our founding chandlers began melting natural organic soy wax and blending pure botanical oils in small handcrafted batches."
     },
     {
-      year: "2009",
-      title: "Opening the Laguna Beach Atelier",
-      description: "Annette Pure opened its flagship doors on Forest Avenue in Laguna Beach, establishing our open-studio workshop where visitors could watch candles hand-poured in real time."
+      year: "2010",
+      title: "Flagship Experiential Studios",
+      description: "Annette Pure expanded into experiential studio ateliers, establishing open-studio workshops where patrons could watch candles hand-poured in real time and explore bespoke fragrance blending."
     },
     {
-      year: "2015",
-      title: "The Murano Glass & Artisan Collaborations",
-      description: "Partnered with master glassblowers in Italy to cast custom, heirloom vessels that serve as everlasting sculptural decor long after the candle burns down."
+      year: "2016",
+      title: "Indian Botanical & Artisan Collaborations",
+      description: "Partnered with master glassblowers and sustainable botanical cultivators across Mysore, Kashmir, and Kerala to create everlasting sculptural vessels and pure regional scent accords."
     },
     {
-      year: "2020",
-      title: "The Zero-Waste Refill Bar",
-      description: "Pioneered in-store circular refills, allowing candle lovers to bring in empty vessels to be cleaned and refilled at half price, diverting thousands of vessels from landfills."
+      year: "2021",
+      title: "The Circular Eco-Refill Bar",
+      description: "Pioneered in-store circular refills, allowing candle lovers to bring in empty vessels to be cleaned and refilled at special rates, diverting thousands of vessels from landfills."
     },
     {
       year: "2026",
-      title: "22 Years of Master Craftsmanship",
-      description: "Celebrating over two decades of uncompromising non-toxic quality, sustainable luxury, and illuminating over 45,000 sanctuaries worldwide."
+      title: "Over 20 Years of Master Craftsmanship",
+      description: "Celebrating over two decades of uncompromising non-toxic quality, sustainable luxury, and illuminating over 50,000 sanctuaries across India and beyond."
     }
   ];
 
@@ -45,41 +45,41 @@ export default function OurStoryPage({ onNavigate }) {
         <div className="story-hero-overlay" />
         <div className="story-hero-content">
           <span className="story-hero-eyebrow">The Annette Pure Heritage</span>
-          <h1 className="story-hero-title">22 Years of Love, Scent & Intention</h1>
+          <h1 className="story-hero-title">Over 20 Years of Love, Scent & Intention</h1>
           <p className="story-hero-tagline">
             We believe home is sacred. For over two decades, we have crafted non-toxic, hand-poured soy candles that elevate daily rituals and honor the quiet moments of life.
           </p>
         </div>
       </section>
 
-      {/* Founder's Letter Section */}
+      {/* Atelier Manifesto Section */}
       <section className="section founder-letter-section">
         <div className="founder-letter-container">
           
           <div className="founder-img-col">
             <div className="founder-img-frame">
-              <img src={foundersImg} alt="Annette Makutam, Founder and Master Chandler" className="founder-portrait" />
-              <div className="founder-frame-badge">Founder & Master Chandler</div>
+              <img src={foundersImg} alt="Atelier Master Chandler Craft" className="founder-portrait" />
+              <div className="founder-frame-badge">Master Chandler Atelier</div>
             </div>
           </div>
 
           <div className="founder-text-col">
-            <span className="section-eyebrow">A Note from Annette</span>
+            <span className="section-eyebrow">The Atelier Manifesto</span>
             <h2 className="founder-heading">"Scent is the invisible poetry of the home."</h2>
             
             <p className="founder-p">
-              When I poured my very first batch of soy candles twenty-two years ago, the luxury candle market was dominated by paraffin wax, synthetic dyes, and heavy chemical stabilizers. I couldn't burn them in my own home without headaches.
+              When our first batch of soy candles was poured over twenty years ago, the luxury home fragrance market was dominated by paraffin wax, synthetic dyes, and heavy chemical stabilizers that caused headaches.
             </p>
             <p className="founder-p">
-              I wanted to create something different: candles that were as pure and clean as the ocean breeze coming off the Laguna cliffs, yet rich enough to fill an entire home with complex, transportive fragrance.
+              We set out to create something truly pure: candles formulated from 100% natural organic soy wax and pure botanical essential oils that fill an entire room with complex, evocative ambiance without polluting indoor air.
             </p>
             <p className="founder-p">
-              To this day, we still pour every candle in small micro-batches of twelve. We still trim and set each cotton wick by hand. And we still test every scent formula until it achieves absolute olfactory harmony.
+              To this day, every single candle is poured in small micro-batches of twelve. We hand-trim and center each braided cotton wick, and cure each vessel for two weeks before packaging.
             </p>
 
             <div className="founder-signature-block">
-              <span className="founder-signature-text">Annette Makutam</span>
-              <span className="founder-title-text">Founder & Master Chandler, Annette Pure</span>
+              <span className="founder-signature-text">Annette Pure</span>
+              <span className="founder-title-text">Master Chandler Studio & Atelier Lab</span>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ export default function OurStoryPage({ onNavigate }) {
             <div className="pillar-num">01</div>
             <h3 className="pillar-title">100% Organic Soy Wax</h3>
             <p className="pillar-desc">
-              Grown sustainably by American farmers. Biodegradable, clean-burning, and entirely free of petroleum, paraffin, pesticides, and GMOs.
+              Grown sustainably from renewable botanical sources. Biodegradable, clean-burning, and entirely free of petroleum, paraffin, pesticides, and GMOs.
             </p>
           </div>
 
@@ -123,18 +123,18 @@ export default function OurStoryPage({ onNavigate }) {
             <div className="pillar-num">04</div>
             <h3 className="pillar-title">Heirloom Reusable Vessels</h3>
             <p className="pillar-desc">
-              Heavyweight hand-blown glass, ceramics, and brass designed to be permanently kept, refilled at our boutique, or repurposed as decor.
+              Heavyweight hand-blown glass, ceramics, and brass designed to be permanently kept, refilled at our atelier, or repurposed as decor.
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* Interactive 22-Year Timeline */}
+      {/* Interactive Heritage Timeline */}
       <section className="section story-timeline-section">
         <div className="section-intro">
           <span className="section-eyebrow">The Journey</span>
-          <h2 className="section-title">22-Year Heritage Milestones</h2>
+          <h2 className="section-title">Heritage Milestones</h2>
         </div>
 
         <div className="timeline-track">
@@ -157,7 +157,7 @@ export default function OurStoryPage({ onNavigate }) {
       <section className="section story-gallery-section">
         <div className="section-intro">
           <span className="section-eyebrow">Behind the Scenes</span>
-          <h2 className="section-title">The Laguna Beach Atelier</h2>
+          <h2 className="section-title">The Atelier Workshop</h2>
         </div>
 
         <div className="story-gallery-grid">
@@ -177,7 +177,7 @@ export default function OurStoryPage({ onNavigate }) {
 
         <div className="story-cta-box">
           <h3>Experience the Craft in Your Home</h3>
-          <p>Explore our signature candle collections poured with 22 years of love.</p>
+          <p>Explore our signature candle collections poured with over 20 years of dedication.</p>
           <button 
             className="btn-luxury-cta"
             onClick={() => onNavigate && onNavigate('shop')}

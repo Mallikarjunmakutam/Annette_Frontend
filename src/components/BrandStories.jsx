@@ -43,7 +43,7 @@ export default function BrandStories({ onNavigate }) {
             <span className="story-eyebrow">The Art of Intention</span>
             <h3 className="story-title">Purity You Can Breathe In Peace.</h3>
             <p className="story-body">
-              We reject cheap paraffin fillers, synthetic dyes, and harsh chemical stabilizers. Our clean promise guarantees 100% biodegradable American soy wax, lead-free cotton wicks, and pure essential oil fragrance blends.
+              We reject cheap paraffin fillers, synthetic dyes, and harsh chemical stabilizers. Our clean promise guarantees 100% biodegradable natural botanical soy wax, lead-free cotton wicks, and pure essential oil fragrance blends.
             </p>
             <button 
               className="btn-luxe"

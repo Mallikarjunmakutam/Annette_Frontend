@@ -89,9 +89,9 @@ export default function Bestsellers({ onQuickView, onAddToCart, onNavigate }) {
                 </div>
 
                 <div className="product-price-row">
-                  <span className="product-price">${product.price.toFixed(2)}</span>
+                  <span className="product-price">₹{product.price.toLocaleString('en-IN')}</span>
                   {product.comparePrice && (
-                    <span className="product-price-compare">${product.comparePrice.toFixed(2)}</span>
+                    <span className="product-price-compare">₹{product.comparePrice.toLocaleString('en-IN')}</span>
                   )}
                 </div>
                 
