@@ -83,22 +83,35 @@ export default function Header({
     <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         
-        {/* Left Side: Brand Logo */}
+        {/* Left Side: Burger Menu + Brand Divider + Logo */}
         <div className="header-logo-group">
           <button 
-            className="icon-btn mobile-menu-btn" 
+            className="icon-btn header-burger-btn mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
+            title="Menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? (
+              <X size={20} />
+            ) : (
+              <span className="burger-icon-lines" aria-hidden="true">
+                <span className="burger-line line-1"></span>
+                <span className="burger-line line-2"></span>
+                <span className="burger-line line-3"></span>
+              </span>
+            )}
           </button>
+
+          <div className="header-brand-divider" aria-hidden="true" />
           
           <button 
             onClick={() => handleNavClick('home')} 
             className="header-logo-container"
             aria-label="Annette Pure Home"
           >
-            <span className="logo-script-accent">A</span>
+            <div className="logo-monogram-mark" aria-hidden="true">
+              <span className="logo-script-accent">A</span>
+            </div>
             <div className="logo-text-group">
               <span className="logo-wordmark">ANNETTE PURE</span>
               <span className="logo-submark">HANDMADE SOY CANDLES</span>
@@ -210,10 +223,10 @@ export default function Header({
 
       </div>
 
-      {/* Mobile Slide-Out Drawer Navigation */}
+      {/* Slide-Out Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="mobile-drawer-menu">
-          <div className="mobile-drawer-inner">
+        <div className="mobile-drawer-menu" onClick={() => setMobileMenuOpen(false)}>
+          <div className="mobile-drawer-inner" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-drawer-header">
               <span className="mobile-drawer-tagline">Handcrafted Luxury Scents</span>
               <button 
